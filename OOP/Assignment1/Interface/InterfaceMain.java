@@ -1,5 +1,3 @@
-package Assignment1;
-
 /**
  * InterfaceMain
  * @author Pulkit
@@ -7,12 +5,12 @@ package Assignment1;
  * Runs all the shapes class
  */
 
+package Assignment1;
 public class InterfaceMain {
 	
 	/**
-	 * printShape
 	 * @param{Shape} shape
-	 * Takes obj of shape and prints it's area
+	 * printShape method takes shape type object and prints it's area
 	 */
 	
 	public void printShape(Shape shape) {
@@ -20,9 +18,8 @@ public class InterfaceMain {
 	}
 	
 	/**
-	 * main
 	 * @param{String[]} args
-	 * starts the program execution
+	 * main method starts the program execution
 	 */
 	
 	public static void main(String args[]) {
