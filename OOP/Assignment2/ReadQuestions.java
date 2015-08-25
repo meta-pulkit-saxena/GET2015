@@ -1,46 +1,49 @@
-package problems;
+/**
+ * @class ReadQuestion
+ * @author Pulkit
+ * @since 14th August 15
+ * This class reads the questions from the csv file and returns back a list of question object. 
+ */
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * ReadQuestions
- * @author Pulkit
- * @since  13th August 15
- * Reads questions from file
- */
-
-public class ReadQuestions {
-	
-	private String address = "D:/Questions.csv";													// Address of file
-	private List<String> questions = new ArrayList();
+public class ReadQuestion {
 		
-	/**
-	 * readCsvFile
-	 * @return{List<String> list of string
-	 * @throws IOException
-	 * This method returns the questions for survey
-	 **/
+	private List<Question> question = new ArrayList<Question>();
+	private String address = "D:/question.csv";												// Address
+	private String breakPoint = ",";
 	
-	public List<String> readCsvFile() {
-		ReadQuestions obj = new ReadQuestions();
-		BufferedReader fileReader = null;
+	/**
+	 * This function reads the csv type file of questions and stores it in a list of question type objects.
+	 * @return{List<Question>}
+	 */
+	
+	public List<Question> readCsvQuestion() {
+		Question tempObj = null;
+		BufferedReader file ;
 		try {
 			String line = "";
-			fileReader = new BufferedReader(new FileReader(obj.address));						   //read from file;
-			fileReader.readLine();
-			while ((line = fileReader.readLine()) != null) {									
-					obj.questions.add(line);													   // add it to file
-			}
-			fileReader.close();																	   // close the File
-		} 
-		catch (Exception e){
-				e.printStackTrace();
+			file = new BufferedReader(new FileReader(address));
+			while ((line = file.readLine()) != null) {									
+				String[] tokens = line.split(breakPoint);									// Separator
+				if (tokens.length > 0) {													// add it to file
+					tempObj = new Question();
+					tempObj.setQuestion(tokens[0].trim());
+					tempObj.setType(tokens[1].trim());
+					tempObj.setOptions(tokens[2].trim());
+				}
+				this.question.add(tempObj);
 		}
-		return obj.questions;	
+		file.close();																	   // close the File
+		
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return question;
 	}
+	
 }
-
-
