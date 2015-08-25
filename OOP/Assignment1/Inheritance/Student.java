@@ -1,11 +1,12 @@
-package Assignment1;
 
 /**
- * Student
+ * @class Student
  * @author Pulkit
  * @since  13th August 15
  * Inherits properties of person class 
  */
+ 
+package Assignment1;
 
 public class Student extends Person {
     
@@ -13,22 +14,20 @@ public class Student extends Person {
     private String[] courses;
     
     /**
-     * Student
+     * Constructor for the Student class
      * @param{int} uid
      * @param{String} name
      * @param{int} studentId
-     * Constructor for the Student class
      */
     
     public Student(int uid, String name, int studentId) {
-        super(uid,name);
-        this.studentId = studentId;
+        super(uid,name);																// Passing on value to parent class constructor
+        this.studentId = studentId;														// Initializes the studentUid of student object
     }
     
     /**
-     * getStudentId
+     * getStudentId function returns the studentId
      * @return{int} studentId
-     * returns the studentId
      */
     
     public int getStudentId() {
@@ -36,19 +35,17 @@ public class Student extends Person {
     }
     
     /**
-     * setStudentId
-     * @param studentId
-     * returns stdentId of student
+     * setStudentId returns stdentId of student
+     * @param{int} studentId
      */
     
     public void setStudentId(int studentId) {
-    	this.studentId = studentId;
+    	this.studentId = studentId;														// Sets the studentId
     }
     
     /**
-     * getCourses
+     * getCourses function returns string of courses.
      * @return{String[][]}
-     * 
      */
     
     public String[] getCourses() {
@@ -56,18 +53,18 @@ public class Student extends Person {
     }
     
     /**
-     * setCourses
+     * setCourses function sets courses of the student
      * @param{String[]} courses
-     * sets courses of the student
      */
     
-    public void setCources(String[] courses) {
-    	this.courses = courses;
+    public void setCourses(String[] courses) {
+    	this.courses = courses;															// Sets the courses.
     }
     
     /**
+     * toString function overrides the inbuilt function and returns the string of name ,Uid and studentId
+     * @override toString
      * @return{String} 
-     * returns the string of name ,Uid and studentId
      */
     
     public String toString() {        
