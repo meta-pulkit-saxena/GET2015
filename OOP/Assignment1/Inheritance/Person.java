@@ -1,32 +1,31 @@
-package Assignment1;
-
 /**
- * Person
+ * @class Person
  * @author Pulkit
  * @since 13th August 15
- * Contains properties of person
+ * Contains properties of person and functions
  */ 
 
+package Assignment1;
+
 public class Person {
-    private int uid;
+    private int uid;																// Private members
     private String name;
     
     /**
-     * Person
      * @param{int} uid
      * @param{String} name
-     * Constructor of Person class
+     * Person is a Constructor of class Person. It initializes the uid and 
+     * name members of the object
      */
     
     public Person(int uid, String name){
-        this.uid = uid;
-        this.name = name;
+        this.uid = uid;																// Initializes the uid	
+        this.name = name;															// Initializes the name 
     }
     
-    /**
-     * getUid 
+    /** 
+     * getUid function returns the Uid of person object
      * @return{int} Uid
-     * it returns the Uid of person
      */
     
     public int getUid() {
@@ -34,19 +33,17 @@ public class Person {
     }
     
     /**
-     * setUid
+     * setUid sets the value of Uid of object
      * @param{int} Uid
-     * It sets the value of Uid
      */
     
     public void setUid(int uid) {
-    	this.uid = uid;
+    	this.uid = uid;																// sets the value of uid member of object 													
     }
     
     /**
-     * getName
+     * It sets the name of person object
      * @return{String}
-     * It sets the name of person
      */
     
     public String getName() {
@@ -54,19 +51,18 @@ public class Person {
     }
     
     /**
-     * setName
-     * @param{String} name
      * It sets the name of the person
+     * @param{String} name
      */
     
     public void setName(String name) {
-    	this.name = name;
+    	this.name = name;															// sets the value of name member of object 
     }    
     
     /**
-     * toString
+     * This method overrides the inbuilt toString function and returns a string of name and Uid
+     * @override toString
      * @return{String}
-     * returns a string of name and Uid
      */
     
     public String toString() {
