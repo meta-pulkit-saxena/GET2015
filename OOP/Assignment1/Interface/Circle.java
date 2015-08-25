@@ -1,11 +1,11 @@
-package Assignment1;
-
 /**
- * Circle
+ * @class Circle
  * @author Pulkit
  * @since 12th August15
  * Implements the shape interface according to circle
  */
+package Assignment1;
+
 public class Circle implements Shape {
 	private int radius;
 	
@@ -16,7 +16,7 @@ public class Circle implements Shape {
 	 */
 	
 	public Circle(int radius) {
-		this.radius = radius;
+		this.radius = radius;															// Initializes the radius member of the circle.
 	}
 	
 	
@@ -31,12 +31,12 @@ public class Circle implements Shape {
 	
 	/**
 	 * @return{double} area of circle
-	 * returns the area of circle
+	 * Returns the area of circle of the object by which it is called.
 	 */
 	
 	public double getArea() {
 		double area;
-		area = (22 / 7) * (radius * radius);
+		area = (22 / 7) * (radius * radius);											// Calculates the area of the circle.
 		return area;
 	}
 }
