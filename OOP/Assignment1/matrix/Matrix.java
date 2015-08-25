@@ -1,43 +1,39 @@
-package Assignment1;
 
-import java.util.Scanner;
-
-
-/**
- * 
+/**@class  Matrix
  * @author Pulkit
  * @since  12th August 15
- * This class performs actions on a matrix
+ * This class creates a matrix and performs actions on it like transpose and display it.
  */
 
+package Assignment1;
+import java.util.Scanner;
 public class Matrix {
 	
 	public int data[][];
-	private int noRows;
-	private int noCol;
+	protected int noRows;
+	protected int noCol;
 
 	
 	/**
-	 * Matrix
+	 * Called when the object of Matrix class is made, it initializes the noRow and
+	 * noCol of the matrix object.
 	 * @param{int} number of rows
-	 * @param{int} number of columns
-	 * Constructor for Matrix class
+	 * @param{int} number of columns 
 	 */
 	
 	public Matrix(int row, int col) {
 		
 		this.noRows = row;
-		this.noCol = col;																			// Constructor
+		this.noCol = col;																			// Constructor, initializes the noRows and noCol.
 		data = new int[row][col];
 	}
 	
 	
 	/**
-	 * addElements
+	 * Adds element at the specified location of matrix of the object by which it is called.
 	 * @param{int} row number
 	 * @param{int} column number
 	 * @param{int} value to be added
-	 * Adds element at the specified location
 	 */
 	
 	public void addElements(int row, int col, int val) {
@@ -47,8 +43,8 @@ public class Matrix {
 	
 	
 	/**
-	 * matrixTranspose
-	 * @return{Matrix object}  returns a Matrix object
+	 * This function is called to create and return the transpose of the calling object's matrix.
+	 * @return{Matrix object}   A Matrix object
 	 */
 	
 	public Matrix matrixTranspose() {
@@ -58,7 +54,7 @@ public class Matrix {
 		{
 			for(int colCount = 0; colCount < this.noCol; colCount++)
 			{
-				tempObj.addElements(colCount, rowCount, this.data[rowCount][colCount]);					// Transpose
+				tempObj.addElements(colCount, rowCount, this.data[rowCount][colCount]);					// Transpose logic
 			}
 		}
 		return tempObj;	
@@ -66,12 +62,12 @@ public class Matrix {
 	
 	
 	/**
-	 * show
 	 * This method displays the matrix elements
 	 */
 	
 	public void show() {
 		
+		System.out.println("\nThe transpose of the input matrix is:\n" );
 		for(int rowCount = 0; rowCount < this.noRows; rowCount++)
 		{
 			for(int colCount = 0; colCount < this.noCol; colCount++)
