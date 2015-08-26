@@ -20,7 +20,7 @@ public class PrintUtility {
 	 * @param{Train} finalTrain 
 	 */
 	
-	public void printTicket(Train finalTrain, Passenger passenger) {
+	public static void printTicket(Train finalTrain, Passenger passenger) {
 		numberOfSeats = finalTrain.getAvailableSeatOrWeight();
 		costOfTicket = finalTrain.getCost();
 		System.out.println("\n\t\tTicket details");
@@ -34,7 +34,7 @@ public class PrintUtility {
 	 * This function prints the train chart.
 	 */
 	
-	public void printTrainChart(List<Train> listOfTrain) {
+	public static void printTrainChart(List<Train> listOfTrain) {
 		for(Train train: listOfTrain) {
 			System.out.println(train.getTrainNumber() + "\t" + train.getTrainName() + "\t" + train.getTrainType() + "\t" +  train.getSource() + "\t" 
 					+ train.getDestination() + "\t" + train.getDuration() + "\t" + train.getAvailableSeatOrWeight());
