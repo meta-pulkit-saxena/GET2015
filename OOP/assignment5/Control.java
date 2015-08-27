@@ -67,6 +67,7 @@ public class ControlClass {
 			}
 			
 		}while(choice != 9);
+		scan.close();
 	}
 	
 	/**
