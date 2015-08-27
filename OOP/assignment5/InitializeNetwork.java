@@ -13,7 +13,7 @@ import oops.Train;
 
 public class InitializeNetwork {
 	private HashMap<String,Node> nodesAlreadyInGraph ;
-	private String address = "D:/nodes.csv";													// Address of node csv file.
+	private String address = "nodes.csv";													// Address of node csv file.
 	private String breakPoint = ",";
 
 	/**
