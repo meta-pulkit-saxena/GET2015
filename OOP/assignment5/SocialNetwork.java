@@ -17,7 +17,7 @@ public class SocialNetwork {
 	 */
 	
 	public static void main(String[] args) {
-		ControlClass controlObj = new ControlClass();
+		Control controlObj = new Control();
 		controlObj.control();
 	}
 }
