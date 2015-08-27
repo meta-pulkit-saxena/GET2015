@@ -13,7 +13,7 @@ import java.util.Set;
 
 
 public class Graph {
-	public HashMap<String,Node> nodesInGraph = new HashMap<String,Node>();
+	public Map<String,Node> nodesInGraph = new HashMap<String,Node>();
 	
 	/**
 	 * This function will read nodes from the file and initialize the nodes in graph network with the details.
@@ -113,10 +113,8 @@ public class Graph {
 	 */
 	
 	public void addConnectionBetween(String firstEmail,String secondEmail) {
-		Node nodeFirst = new Node();
-		Node nodeSecond = new Node();
-		nodeFirst = nodesInGraph.get(firstEmail);															
-		nodeSecond = nodesInGraph.get(secondEmail);															
+		Node nodeFirst = nodesInGraph.get(firstEmail);
+		Node nodeSecond = nodesInGraph.get(secondEmail);
 		nodeFirst.addConnection(secondEmail,nodeSecond); 													// Adding second node as a connection in node first.
 		nodeSecond.addConnection(firstEmail, nodeFirst);													// Adding first node as a connection in node second.
 	}
@@ -129,10 +127,8 @@ public class Graph {
 	 */
 	
 	public void removeConnectionBetween(String firstEmail,String secondEmail) {
-		Node nodeFirst = new Node();
-		Node nodeSecond = new Node();
-		nodeFirst = nodesInGraph.get(firstEmail);															
-		nodeSecond = nodesInGraph.get(secondEmail);															// This function will remove the connection between 
+		Node nodeFirst = nodesInGraph.get(firstEmail);
+		Node nodeSecond = nodesInGraph.get(secondEmail);															// This function will remove the connection between 
 		nodeFirst.removeConnection(secondEmail, nodeSecond);												// two given nodes.
 		nodeSecond.removeConnection(firstEmail, nodeFirst);
 	}
