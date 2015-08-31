@@ -26,7 +26,7 @@ public class DoublyLinkedListMain {
 			System.out.println("6. Reverse of List");
 			
 			int choice = scan.nextInt();
-			DoublyLinkedListFunctions doublyLinkedList = new DoublyLinkedListFunctions();
+			DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
 			switch (choice) {
 			case 1:
 				startNode = doublyLinkedList.createList();
