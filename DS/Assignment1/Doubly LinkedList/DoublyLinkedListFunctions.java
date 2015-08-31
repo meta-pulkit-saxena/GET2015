@@ -8,7 +8,7 @@
 
 import java.util.Scanner;
 
-public class DoublyLinkedListFunctions {
+public class DoublyLinkedList {
 	private Scanner scan;
 	private DoublyNode  doublyNodeObj= new DoublyNode();
 	
@@ -101,7 +101,7 @@ public class DoublyLinkedListFunctions {
 		}
 		newNode.setPrevious(head);
 		newNode.setNext(head.getNext());
-		if (!DoublyLinkedListFunctions.isEmpty(head.getNext())) 			// if no is to insert
+		if (!DoublyLinkedList.isEmpty(head.getNext())) 			// if no is to insert
 																			// in between in the
 																			// list
 			head.getNext().setPrevious(newNode);
@@ -116,7 +116,7 @@ public class DoublyLinkedListFunctions {
 	 */
 	
 	public DoublyNode deleteNode(DoublyNode startNode) {
-		if (DoublyLinkedListFunctions.isEmpty(startNode))
+		if (DoublyLinkedList.isEmpty(startNode))
 			return null;
 		System.out.println("Enter data to be deleted");
 		int data = scan.nextInt();
@@ -129,12 +129,12 @@ public class DoublyLinkedListFunctions {
 		while (head != null && head.getData() != data) {
 			head = head.getNext();
 		}
-		if (DoublyLinkedListFunctions.isEmpty(head)) {
+		if (DoublyLinkedList.isEmpty(head)) {
 			System.out.println("data does not exist");
 
 		} else {
 			head.getPrevious().setNext(head.getNext());
-			if (!DoublyLinkedListFunctions.isEmpty(head.getNext()))
+			if (!DoublyLinkedList.isEmpty(head.getNext()))
 				head.getNext().setPrevious(head.getPrevious());
 			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
 			return startNode;
@@ -151,7 +151,7 @@ public class DoublyLinkedListFunctions {
 	
 	public DoublyNode deleteNodeAtPosition(DoublyNode startNode) {
 		int counter = 1;
-		if (DoublyLinkedListFunctions.isEmpty(startNode))
+		if (DoublyLinkedList.isEmpty(startNode))
 			return null;
 
 		System.out.println("Enter Position ");
@@ -168,12 +168,12 @@ public class DoublyLinkedListFunctions {
 		while (index != counter++ && head != null) {
 			head = head.getNext();
 		}
-		if (DoublyLinkedListFunctions.isEmpty(head)) {
+		if (DoublyLinkedList.isEmpty(head)) {
 			System.out.println("Data does not exist");
 
 		} else {
 			head.getPrevious().setNext(head.getNext());
-			if (!DoublyLinkedListFunctions.isEmpty(head.getNext()))
+			if (!DoublyLinkedList.isEmpty(head.getNext()))
 				head.getNext().setPrevious(head.getPrevious());
 			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
 			return startNode;
@@ -211,7 +211,7 @@ public class DoublyLinkedListFunctions {
 	 */
 	
 	public static boolean check(DoublyNode head) {
-		if (DoublyLinkedListFunctions.isEmpty(head)) {
+		if (DoublyLinkedList.isEmpty(head)) {
 			System.out.println("Position is incorrect or Node is empty");
 			return false;
 		} else {
