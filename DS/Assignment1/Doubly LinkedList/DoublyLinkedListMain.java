@@ -11,10 +11,9 @@ import java.util.Scanner;
 public class DoublyLinkedListMain {
 	
 	public static void main(String args[]) {
-
-		DoublyNode startNode = null;
 		String choiceContinue = "";
 		Scanner scan;
+		DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
 		do {
 			scan = new Scanner(System.in);
 			System.out.print("Menu:");
@@ -26,34 +25,31 @@ public class DoublyLinkedListMain {
 			System.out.println("6. Reverse of List");
 			
 			int choice = scan.nextInt();
-			DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
+
 			switch (choice) {
 			case 1:
-				startNode = doublyLinkedList.createList();
+				doublyLinkedList.createList();
 				break;
 			case 2:
-				doublyLinkedList.displayList(startNode);
+				doublyLinkedList.displayList();
 				break;
 			case 3:
 				System.out.println("Enter Position");
 				int position = scan.nextInt();
-				DoublyNode head = doublyLinkedList.insertAtPosition(startNode,
-						position);
-				if (DoublyLinkedListFunctions.check(head))
-					startNode = head;
+				System.out.println("Enter data to be added");
+				int value = scan.nextInt();
+				 doublyLinkedList.add(position,value);
 				break;
 			case 4:
-				head = doublyLinkedList.deleteNode(startNode);
-				if (DoublyLinkedListFunctions.check(head))
-					startNode = head;
+				doublyLinkedList.delete();
 				break;
 			case 5:
-				head = doublyLinkedList.deleteNodeAtPosition(startNode);
-				if (DoublyLinkedListFunctions.check(head))
-					startNode = head;
+				System.out.println("Enter Position ");
+				int val = scan.nextInt();
+				doublyLinkedList.delete(val);
 				break;
 			case 6:
-				startNode = doublyLinkedList.reverse(startNode);
+				doublyLinkedList.reverse();
 				break;
 			default:
 				System.out.println("Please enter corrrect choice");
@@ -62,6 +58,4 @@ public class DoublyLinkedListMain {
 				choiceContinue = scan.next();
 		} while (choiceContinue.equalsIgnoreCase("y"));
 	}
-
-
 }
