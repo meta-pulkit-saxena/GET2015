@@ -36,13 +36,8 @@ public class GenericArrayList<T> {
 	 * @param{T} value
 	 */
 	
-	public void addItem(T value) {
-		int freeSpace = internalArray.length - getSize();
-		if(freeSpace == 0) {
-			increaseArraySize();
-		}
-		internalArray[size] = value;
-		size += 1;
+	public void add(T value) {
+		add(getSize(),value);
 	}
 	
 	/**
@@ -62,7 +57,7 @@ public class GenericArrayList<T> {
 	 * @param{T} value
 	 */
 	
-	public void addItemAtLocation(int location,T value) {
+	public void add(int location,T value) {
 		int freeSpace = internalArray.length - getSize();
 		if(freeSpace < 1) {
 			increaseArraySize();
@@ -75,17 +70,16 @@ public class GenericArrayList<T> {
 	}
 	
 	/**
-	 * This function will return the location of the next first occurrence of item which is at the given location. 
+	 * This function will return the location of the next first occurrence of item after a given location. 
 	 * @param{int} location
 	 * @return{int} nextLocation
 	 */
 	
-	public int firstOccurrenceAfterlocation(int location) {
+	public int indexOf(int location,T value) {
 		int lastIndex = getSize() - 1;
 		int newLocation = -1;
-		T item = internalArray[location];
 		for(int count = location + 1; count <= lastIndex; count++) {
-			if(item == internalArray[count]) {
+			if(value == internalArray[count]) {
 				newLocation = count;
 				break;
 			}
@@ -99,16 +93,8 @@ public class GenericArrayList<T> {
 	 * @return{int} count
 	 */
 	
-	public int firstIndex(T value) {
-		int found = -1;
-		int lastIndex = getSize() - 1;
-		for(int count = 0; count <= lastIndex; count++ ) {
-			if(internalArray[count] == value)  {
-				found = count;
-				break;
-			}
-		}
-		return found;														// -1, means element not found.
+	public int indexOf(T value) {
+		return indexOf(-1,value);													// -1, means element not found.
 	}
 	
 	/**
@@ -116,10 +102,10 @@ public class GenericArrayList<T> {
 	 * @param{int} location
 	 */
 	
-	public void removeAtLocation(int location) {
+	public void remove(int location) {
 		int lastIndex = getSize() - 1;
 		int start = location + 1;
-		if(location >= 0 && lastIndex != location) {						// To check if element to be deleted  
+		if(location >= 0 && lastIndex != location) {					// To check if element to be deleted  
 			for(int count = start; count <= lastIndex; count++) {			// is not the last and index is > 0.
 				internalArray[count-1] = internalArray[count];
 			}
@@ -133,11 +119,11 @@ public class GenericArrayList<T> {
 	 * @param{T} value
 	 */
 	
-	public void removeElement(T value) { 
+	public void remove(T value) { 
 		int count = 0;
 		while(internalArray[count] != null) {
 			if(internalArray[count] == value) {
-				removeAtLocation(count);									// Call to removeAtLocation function.
+				remove(count);												// Call to removeAtLocation function.
 			}
 			count++;
 		}
@@ -164,9 +150,9 @@ public class GenericArrayList<T> {
 	    int right = lastIndex;
 
 	    while( left < right ) {																
-	        T temp = internalArray[left];									// swap the values at the left and right indices
+	        T temp = internalArray[left];							// swap the values at the left and right indices
 	        internalArray[left] = internalArray[right];							
-	        internalArray[right] = temp;	        						// move the left and right index pointers in toward the center
+	        internalArray[right] = temp;	        					// move the left and right index pointers in toward the center
 	        left++;
 	        right--;
 	    }
@@ -200,16 +186,16 @@ public class GenericArrayList<T> {
 		GenericArrayList<Integer> mergedArrayList = new GenericArrayList<Integer>(Integer[].class);	
 		int sizeFirst = getSize();
 		int sizeSecond = secondList.getSize();
-		int newSize = sizeFirst + sizeSecond;								// new size
+		int newSize = sizeFirst + sizeSecond;						// new size
 		T value;
 		mergedArrayList.internalArray = (Integer[]) Arrays.copyOf(this.internalArray, newSize);
 		for(int count = 0; count < sizeFirst; count++) {
 			value = internalArray[count];
-			mergedArrayList.addItem((Integer) value);
+			mergedArrayList.add((Integer) value);
 		}
 		for(int count = 0; count < sizeSecond; count++) {
 			value = secondList.internalArray[count];
-			mergedArrayList.addItem((Integer) value);
+			mergedArrayList.add((Integer) value);
 		}
 		return mergedArrayList;
 	}
@@ -221,7 +207,7 @@ public class GenericArrayList<T> {
 	public void show() {
 		int lastIndex = getSize() - 1;
 		for(int count = 0; count <= lastIndex; count++) {
-			System.out.print(internalArray[count] + " ");						// Displaying elements.
+			System.out.print(internalArray[count] + " ");				// Displaying elements.
 		}
 	}
 }
