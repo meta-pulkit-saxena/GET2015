@@ -13,6 +13,13 @@ public class Queue {
 	private Object queue[];
 
 	/**
+	 * This is a default constructor.
+	 */
+	 
+	public Queue() {
+	}
+	
+	/**
 	 * This function will return the end of queue.
 	 * @return{int} end
 	 */
@@ -81,7 +88,7 @@ public class Queue {
 	 */
 	
 	public Object getFront() {
-		Object object = new Object();
+		Object object;
 		if (end == -1) {
 			System.out.println("Queue is empty");
 			return null;
