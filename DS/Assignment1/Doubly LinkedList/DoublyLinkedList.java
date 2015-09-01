@@ -11,18 +11,19 @@ import java.util.Scanner;
 public class DoublyLinkedList {
 	private Scanner scan;
 	private DoublyNode  doublyNodeObj= new DoublyNode();
+	private DoublyNode start = null;
 	
 	/**
 	 * This function will create a linked list by taking elements one by one.
 	 * @return{DoublyNode}
 	 */
 	
-	public  DoublyNode createList() {
+	
+	public void createList() {
 		int data;
 		scan = new Scanner(System.in);
 		String choice = null;
 		DoublyNode current = null;
-		DoublyNode start = null;
 		DoublyNode newNode = null;
 		System.out.println("Enter the value of start node:");
 		data = scan.nextInt();
@@ -39,8 +40,6 @@ public class DoublyLinkedList {
 			System.out.print("Do you want to add more nodes:(Y/N) ");
 				choice = scan.next();
 		} while (choice.equalsIgnoreCase("y"));
-
-		return start;
 	}
 
 
@@ -56,43 +55,34 @@ public class DoublyLinkedList {
 
 	/**
 	 * This function will display all the nodes value.
-	 * @param{DoublyNode} start
 	 */
 	
-	public void displayList(DoublyNode start) {
+	public void displayList() {
+		DoublyNode temp;
 		if (isEmpty(start)) {
 			System.out.println("List is empty");
 			return;
 		}
-		while (start != null) {
-			System.out.print(start.getData() + " ");
-			start = start.getNext();
+		temp = start;
+		while (temp != null) {
+			System.out.print(temp.getData() + " ");
+			temp = temp.getNext();
 		}
 	}
 
 	/**
 	 * This function will add node at a location.
-	 * @param{DoublyNode} startNode
 	 * @param{int} position
-	 * @return
 	 */
 	
-	public DoublyNode insertAtPosition(DoublyNode startNode, int position) {
-		int counter = 2;
-		int data;
-		scan = new Scanner(System.in);
-		if (position <= 0 && position > doublyNodeObj.getNoOfNodes() + 1
-				|| isEmpty(startNode))
-			return null;
-		System.out.println("Enter data to be insert");
-		data = scan.nextInt();
+	public void add( int position,int data) {
+		int counter = 2;;
 		DoublyNode newNode = new DoublyNode(data);
-		DoublyNode head = startNode;
+		DoublyNode head = start;
 		if (position == 1) {
-			newNode.setNext(startNode);
-			startNode.setPrevious(newNode);
-			startNode = newNode;
-			return startNode;
+			newNode.setNext(start);
+			start.setPrevious(newNode);
+			start = newNode;
 		}
 		while (counter != position) {
 			head = head.getNext();
@@ -100,31 +90,25 @@ public class DoublyLinkedList {
 		}
 		newNode.setPrevious(head);
 		newNode.setNext(head.getNext());
-		if (!DoublyLinkedList.isEmpty(head.getNext())) 			// if no is to insert
+		if (!DoublyLinkedList.isEmpty(head.getNext())) 						// if no is to insert
 																			// in between in the
 																			// list
 			head.getNext().setPrevious(newNode);
 		head.setNext(newNode);												// if the no is at last position
-		return startNode;
 	}
 
 	/**
 	 * This function will delete node based on the data.
-	 * @param{DoublyNode} startNode
-	 * @return{DoublyNode}
 	 */
 	
-	public DoublyNode deleteNode(DoublyNode startNode) {
-		if (DoublyLinkedList.isEmpty(startNode))
-			return null;
+	public void delete() {
 		System.out.println("Enter data to be deleted");
 		int data = scan.nextInt();
-		if (startNode.getData() == data) {
-			startNode = startNode.getNext();
+		if (start.getData() == data) {
+			start = start.getNext();
 			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
-			return startNode;
 		}
-		DoublyNode head = startNode;
+		DoublyNode head = start;
 		while (head != null && head.getData() != data) {
 			head = head.getNext();
 		}
@@ -136,34 +120,22 @@ public class DoublyLinkedList {
 			if (!DoublyLinkedList.isEmpty(head.getNext()))
 				head.getNext().setPrevious(head.getPrevious());
 			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
-			return startNode;
-
 		}
-		return null;
 	}
 
 	/***
 	 * This function will delete node at given location.
-	 * @param{DoublyNode} startNode
-	 * @return{DoublyNode}
 	 */
 	
-	public DoublyNode deleteNodeAtPosition(DoublyNode startNode) {
+	public void delete(int index) {
 		int counter = 1;
-		if (DoublyLinkedList.isEmpty(startNode))
-			return null;
-
-		System.out.println("Enter Position ");
-		int index = scan.nextInt();
-		if (index <= 0 || index > doublyNodeObj.getNoOfNodes())
-			return null;
-
+		DoublyNode tempNode = null;
+		tempNode = start;
 		if (index == 1) {
-			startNode = startNode.getNext();
+			tempNode = tempNode.getNext();
 			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
-			return startNode;
 		}
-		DoublyNode head = startNode;
+		DoublyNode head = start;
 		while (index != counter++ && head != null) {
 			head = head.getNext();
 		}
@@ -175,21 +147,16 @@ public class DoublyLinkedList {
 			if (!DoublyLinkedList.isEmpty(head.getNext()))
 				head.getNext().setPrevious(head.getPrevious());
 			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
-			return startNode;
 		}
-		return null;
 	}
 
 	/**
 	 * This function will reverse the doubly linked list
-	 * @param{DoublyNode} start
-	 * @return{DoublyNode}
 	 */
 	
-	public DoublyNode reverse(DoublyNode start) {
+	public void reverse() {
 		if (start == null) {
 			System.out.println("Empty");
-			return null;
 		}
 		DoublyNode current = start;
 		DoublyNode temp = null;
@@ -200,7 +167,7 @@ public class DoublyLinkedList {
 			current = current.getPrevious();
 		}
 		System.out.println("Reversed:");
-		return temp.getPrevious();
+		start = temp.getPrevious();
 	}
 
 	/**
