@@ -24,19 +24,18 @@ public class DoublyLinkedList {
 		DoublyNode current = null;
 		DoublyNode start = null;
 		DoublyNode newNode = null;
-		
+		System.out.println("Enter the value of start node:");
+		data = scan.nextInt();
+		newNode = new DoublyNode(data);
+		start = newNode;
+		current = start;
 		do {
 			System.out.print("Enter value of node");
 			data = scan.nextInt();
 			newNode = new DoublyNode(data);
-			if (isEmpty(start)) {
-				start = newNode;
-				current = start;
-			} else {
-				current.setNext(newNode);
-				newNode.setPrevious(current);
-				current = newNode;
-			}
+			current.setNext(newNode);
+			newNode.setPrevious(current);
+			current = newNode;
 			System.out.print("Do you want to add more nodes:(Y/N) ");
 				choice = scan.next();
 		} while (choice.equalsIgnoreCase("y"));
