@@ -10,11 +10,9 @@ public class ArrayListMain {
 
 	public static void main(String[] args) {
 		GenericArrayList<Integer> arrayList = new GenericArrayList<Integer>(Integer[].class);
-		arrayList.addItem(2);
-		arrayList.addItem(4);
-		arrayList.addItem(9);											// Adding elements into the first list.
-		arrayList.addItem(4);
-		arrayList.addItem(5);
+		for(int count = 1; count < 7; count++) {
+			arrayList.addItem(count);                                   // Inputing elements in first list by loop.
+		}
 		arrayList.addItemAtLocation(2, 0);
 		System.out.print("Element which is at location 1 is also at location: ");
 		System.out.println(arrayList.firstOccurrenceAfterlocation(1));
@@ -24,16 +22,16 @@ public class ArrayListMain {
 		arrayList.removeElement(4);
 		arrayList.reverse();											// Reversing the array list.
 		arrayList.sort();
-		System.out.println("\nElements of first array list.");
+		System.out.println("\nElements of first array list are:");
 		arrayList.show();
 		System.out.println("\n\nElements of second array list.");
 		GenericArrayList<Integer> arrayListSecond = new GenericArrayList<Integer>(Integer[].class);
 		GenericArrayList<Integer> arrayListMerged;
-		arrayListSecond.addItem(56);
-		arrayListSecond.addItem(44);									// Adding elements of second array list.
-		arrayListSecond.addItem(98);
+		for(int count = 8; count < 14; count++) {
+			arrayListSecond.addItem(count);                             // Adding elements in the second list by loop.
+		}
 		arrayListSecond.show();
-		System.out.println("\n\nElements of merged array List");
+		System.out.println("\n\nElements of merged array List are:");
 		arrayListMerged = arrayList.mergeArrayLists(arrayListSecond);	// Calling merge array list function for  
 		arrayListMerged.show();											// array list first and second.
 		arrayList.removeAll();
