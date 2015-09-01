@@ -12,6 +12,13 @@ public class College {
 		private int seatsAvailable;
 		
 		/**
+		 * This a is a default constructor.
+		 */
+		
+		public College() {
+		}
+		
+		/**
 		 * This is a constructor of college object.
 		 * @param{String} name
 		 * @param{int} seatsAvailable
