@@ -13,6 +13,18 @@ public class Queue {
 	private Object queue[];
 
 	/**
+	 * This is a  parameterized constructor of queue.
+	 * @param{int} size
+	 */
+	
+	public Queue(int size) {
+		front = -1;
+		end = -1;
+		this.size = size;
+		queue = new Object[size];
+	}
+	
+	/**
 	 * This is a default constructor.
 	 */
 	 
@@ -96,19 +108,6 @@ public class Queue {
 			object = queue[end];
 		}
 		return object;
-	}
-
-	/**
-	 * This is a constructor of queue.
-	 * @param{int} size
-	 */
-	
-	public Queue(int size) {
-		front = -1;
-		end = -1;
-		this.size = size;
-		queue = new Object[size];
-
 	}
 
 	/**
