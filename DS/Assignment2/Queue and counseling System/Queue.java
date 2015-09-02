@@ -133,7 +133,7 @@ public class Queue {
 	 */
 	
 	public Object dequeue() {
-		Object item = new Object();
+		Object item;
 		if (front == -1) {
 			System.out.println("Queue is empty");
 			return null;
