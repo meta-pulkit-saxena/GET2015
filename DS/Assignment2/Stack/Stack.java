@@ -36,7 +36,6 @@ public class Stack<T> {
 			System.out.println("UnderFlow");
 		}
 		else {
-			tempTopNode = new StackNode<T>();
 			tempTopNode = top;
 			top = tempTopNode.getNextNode();
 		}
