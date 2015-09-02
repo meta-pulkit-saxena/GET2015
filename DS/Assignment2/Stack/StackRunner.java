@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class StackRunner {
 	
 	public static void main(String[] args) {
-		StackFunctions<Integer> stackObj = new StackFunctions<Integer>();
+		Stack<Integer> stackObj = new Stack<Integer>();
 		displayMenu();
 		int choice,value; 
 		Scanner scan = new Scanner(System.in);
