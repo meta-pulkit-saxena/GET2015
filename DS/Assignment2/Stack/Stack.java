@@ -6,7 +6,7 @@
  * This class  will define the functions for the stack.
  */
 
-public class StackFunctions<T> {
+public class Stack<T> {
 	public StackNode<T> top ;
 	
 	/**
