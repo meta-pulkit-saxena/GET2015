@@ -1,165 +1,146 @@
 
 /**
- * This class contains all the functions related to doubly list list
- * @class  DoublyLinkedListFunctions
+ * @class  DoublyLinkedList
  * @author Pulkit
- * @since  25th August 15
+ * @class  25th August 15
+ * This class defines all the functions related to the doubly linked list.
  */
 
-import java.util.Scanner;
+package RevisedDsAssignment1;
 
-public class DoublyLinkedList {
-	private Scanner scan;
-	private DoublyNode  doublyNodeObj= new DoublyNode();
-	private DoublyNode start = null;
+public class DoublyLinkedList<T> {
+	private Node<T> startNode;
+	private int size;
 	
 	/**
-	 * This function will create a linked list by taking elements one by one.
-	 * @return{DoublyNode}
+	 * This function will display the doubly linkedList.
 	 */
 	
-	
-	public void createList() {
-		int data;
-		scan = new Scanner(System.in);
-		String choice = null;
-		DoublyNode current = null;
-		DoublyNode newNode = null;
-		System.out.println("Enter the value of start node:");
-		data = scan.nextInt();
-		newNode = new DoublyNode(data);
-		start = newNode;
-		current = start;
-		do {
-			System.out.print("Enter value of node");
-			data = scan.nextInt();
-			newNode = new DoublyNode(data);
-			current.setNext(newNode);
-			newNode.setPrevious(current);
-			current = newNode;
-			System.out.print("Do you want to add more nodes:(Y/N) ");
-				choice = scan.next();
-		} while (choice.equalsIgnoreCase("y"));
-	}
-
-
-	/**
-	 * This function will check if linked list is empty.
-	 * @param{DoublyNode} node
-	 * @return{boolean}
-	 */
-	
-	public static boolean isEmpty(DoublyNode node) {
-		return node == null;
-	}
-
-	/**
-	 * This function will display all the nodes value.
-	 */
-	
-	public void displayList() {
-		DoublyNode temp;
-		if (isEmpty(start)) {
+	public void display() {
+		Node temp;
+		if (startNode == null) {
 			System.out.println("List is empty");
 			return;
 		}
-		temp = start;
+		temp = startNode;
 		while (temp != null) {
 			System.out.print(temp.getData() + " ");
 			temp = temp.getNext();
 		}
 	}
-
+	
 	/**
-	 * This function will add node at a location.
-	 * @param{int} position
+	 * This function will add a element in the doubly linked list.
+	 * @param{T} data
 	 */
 	
-	public void add( int position,int data) {
-		int counter = 2;;
-		DoublyNode newNode = new DoublyNode(data);
-		DoublyNode head = start;
-		if (position == 1) {
-			newNode.setNext(start);
-			start.setPrevious(newNode);
-			start = newNode;
+	public void add(T data) {
+		Node<T> newNode;
+		if(startNode == null) {
+			newNode = new Node<T>(data);
+			startNode = newNode;
+			size++;
 		}
-		while (counter != position) {
-			head = head.getNext();
+		else {
+			add(size + 1, data);
+		}
+		
+	}
+	
+	/**
+	 * This function will add a node at given locatin with specified value.
+	 * @param{int} location
+	 * @param{T} data
+	 */
+	
+	public void add(int location, T data) {
+		int counter = 2;
+		Node<T> newNode = new Node<T>(data);
+		Node current = startNode;
+		if (location == 1) {
+			newNode.setNext(startNode);
+			startNode.setPrevious(newNode);
+			startNode = newNode;
+			size++;
+		}
+		while (counter != location && current.getNext() != null) {
+			current = current.getNext();
 			counter++;
 		}
-		newNode.setPrevious(head);
-		newNode.setNext(head.getNext());
-		if (!DoublyLinkedList.isEmpty(head.getNext())) 						// if no is to insert
-																			// in between in the
-																			// list
-			head.getNext().setPrevious(newNode);
-		head.setNext(newNode);												// if the no is at last position
+		newNode.setPrevious(current);
+		newNode.setNext(current.getNext());
+		if(current.getNext() != null) {
+			current.getNext().setPrevious(newNode);
+		}
+		current.setNext(newNode);	
+		size++;
 	}
-
+	
 	/**
-	 * This function will delete node based on the data.
+	 * This function will remove the given data from the link list.
+	 * @param{T} data
 	 */
 	
-	public void delete() {
-		System.out.println("Enter data to be deleted");
-		int data = scan.nextInt();
-		if (start.getData() == data) {
-			start = start.getNext();
-			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
+	public void removeItem(T data) {
+		if (startNode.getData() == data) {
+			startNode = startNode.getNext();
+			size -= 1;
 		}
-		DoublyNode head = start;
-		while (head != null && head.getData() != data) {
-			head = head.getNext();
+		Node<T> current = startNode;
+		while (current != null && current.getData() != data) {
+			current = current.getNext();
 		}
-		if (DoublyLinkedList.isEmpty(head)) {
+		if (current == null) {
 			System.out.println("data does not exist");
 
 		} else {
-			head.getPrevious().setNext(head.getNext());
-			if (!DoublyLinkedList.isEmpty(head.getNext()))
-				head.getNext().setPrevious(head.getPrevious());
-			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
+			current.getPrevious().setNext(current.getNext());
+			if (current.getNext() != null)
+				current.getNext().setPrevious(current.getPrevious());
+			size -= 1;
 		}
 	}
-
-	/***
-	 * This function will delete node at given location.
+	
+	/**
+	 * This function will remove the node from the given location.
+	 * @param{int} location
 	 */
 	
-	public void delete(int index) {
+	public void remove(int location) {
 		int counter = 1;
-		DoublyNode tempNode = null;
-		tempNode = start;
-		if (index == 1) {
+		Node tempNode = null;
+		tempNode = startNode;
+		if (location == 1) {
 			tempNode = tempNode.getNext();
-			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
+			size -= 1;
 		}
-		DoublyNode head = start;
-		while (index != counter++ && head != null) {
-			head = head.getNext();
+		Node<T> current = startNode;
+		while (location != counter++ && current != null) {
+			current = current.getNext();
 		}
-		if (DoublyLinkedList.isEmpty(head)) {
+		if (current == null) {
 			System.out.println("Data does not exist");
 
-		} else {
-			head.getPrevious().setNext(head.getNext());
-			if (!DoublyLinkedList.isEmpty(head.getNext()))
-				head.getNext().setPrevious(head.getPrevious());
-			doublyNodeObj.setNoOfNodes(doublyNodeObj.getNoOfNodes() - 1);
+		} 
+		else {
+			current.getPrevious().setNext(current.getNext());
+			if (current.getNext() != null) {
+				current.getNext().setPrevious(current.getPrevious());
+			}
+			size -= 1;
 		}
 	}
-
+	
 	/**
 	 * This function will reverse the doubly linked list
 	 */
 	
 	public void reverse() {
-		if (start == null) {
+		if (startNode == null) {
 			System.out.println("Empty");
 		}
-		DoublyNode current = start;
-		DoublyNode temp = null;
+		Node<T> current = startNode;
+		Node<T> temp = null;
 		while (current != null) {
 			temp = current.getPrevious();
 			current.setPrevious(current.getNext());
@@ -167,21 +148,6 @@ public class DoublyLinkedList {
 			current = current.getPrevious();
 		}
 		System.out.println("Reversed:");
-		start = temp.getPrevious();
+		startNode = temp.getPrevious();
 	}
-
-	/**
-	 * This function checks if the head of linked list is empty or not.
-	 * @param{DoublyNode} head
-	 * @return{boolean}
-	 */
-	
-	public static boolean check(DoublyNode head) {
-		if (DoublyLinkedList.isEmpty(head)) {
-			System.out.println("Position is incorrect or Node is empty");
-			return false;
-		} else {
-			return true;
-		}
-	}
-}
+ }
