@@ -57,7 +57,7 @@ public class InfixToPostfix {
 	public String convert(String infix)
 	{
 		String postfix = "";
-		StackFunctions<Character> stackObj = new StackFunctions<>(); 
+		Stack<Character> stackObj = new Stack<>(); 
 		stackObj.push('#'); 
 		for (int i = 0; i < infix.length(); i++)
 		{
