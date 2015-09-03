@@ -6,19 +6,15 @@
  * This class contains all the functions necessary to perform the counseling for college.
  */
 
-import java.io.IOException;
+package RevisedAssignment2;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Scanner;
 
 public class CounselingSystem {
-
-	public List<Student> studentList = new ArrayList<Student>();
 	public List<College> collegeList = new ArrayList<College>();
-	public Map<String, String> finalallotment = new HashMap<String, String>();
+	public List<Student> finalallotment = new ArrayList<Student>();
 	private Queue studentQueue;
 	private Scanner scan = new Scanner(System.in);
 
@@ -27,43 +23,28 @@ public class CounselingSystem {
 	 */
 	
 	public void initializeSystem() {
-		System.out.println("Enter the no Of students ");
-		int n = scan.nextInt();
-		addStudents(n);
-		collegeList.add(new College("college1", 5));
-		collegeList.add(new College("college2", 5));
-		collegeList.add(new College("college3", 5));
-		collegeList.add(new College("college4", 5));
-		collegeList.add(new College("college5", 5));
-	}
-
-	/**
-	 * @param{int} noOfStudents
-	 * @return{List<Student>} This function will add student in the student list.
-	 */
-
-	public List<Student> addStudents(int noOfStudents) {
-		for (int i = 1; i <= noOfStudents; i++) {
-			System.out.println("Enter the name");
-			String name = scan.next();
-			studentList.add(new Student(name, i));
+		System.out.println("Enter the no Of students (greater than 8)");
+		int num = scan.nextInt();
+		enqueueStudents(num);
+		int collegeRank[] = {2,1,1,2,2};
+		String str = "";
+		for(int count = 1; count <= 5; count++ ) {
+			str = "College" + count;
+			collegeList.add(new College(str,collegeRank[count] ,count ,(int) (Math.random()*100)));
+			str  = "";
 		}
-		return studentList;
 	}
 
 	/**
 	 * This function will add students in the queue.
 	 **/
 	
-	protected void enqueueStudents() {
-		studentQueue = new Queue(100);
-		// Storing in StudentQueue
-		for (int count = 1; count <= studentList.size(); count++) {
-			for (Student student : studentList) {
-				if (student.getRank() == count) {
-					studentQueue.enqueue(student);
-				}
-			}
+	protected void enqueueStudents(int noOfStudents) {
+		studentQueue = new Queue(noOfStudents);
+		for (int count = 1; count <= noOfStudents; count++) {
+			System.out.println("Enter the name of " + count + " student");
+			String name = scan.next();
+			studentQueue.enqueue(new Student(name, count));
 		}
 	}
 
@@ -71,13 +52,11 @@ public class CounselingSystem {
 	 * This function displays the list of all the colleges in the system.
 	 */
 
-	public static void printCollegeList() {
-		CounselingSystem tempObj = new CounselingSystem(); 
+	public void printCollegeList() {
 		int i = 1;
 		System.out.println("COLLEGE NAME" + "  " + "Avaliablity");
-		for (College college : tempObj.collegeList) {
-			System.out.println(i + "   " + college.getName() + " "
-					+ college.getSeatsAvailable());
+		for (College college : this.collegeList) {
+			System.out.println(i + "   " + college.getName() + " " + college.getSeatsAvailable());
 			i++;
 		}
 	}
@@ -90,20 +69,9 @@ public class CounselingSystem {
 		while (true) {
 			Student student = (Student) studentQueue.dequeue();
 			if (student != null) {
-				System.out.println("Welcome " + student.getName()
-						+ " with your rank " + student.getRank());
-				System.out.println("Enter your choice");
+				System.out.println("Welcome " + student.getName() + " with your rank " + student.getRank());
 				printCollegeList();
-					scan.next();
-				int choice = scan.nextInt();
-				College college = collegeList.get(choice - 1);
-				if (college.getSeatsAvailable() > 0) {
-					college.setSeatsAvailable(college.getSeatsAvailable() - 1);
-					finalallotment.put(student.getName(), college.getName());
-					System.out.println("Alloted college:" + college.getName());
-				} else {
-					System.out.println("Seats not available");
-				}
+				takeChoices(student);
 			}
 			else 
 			{
@@ -111,17 +79,55 @@ public class CounselingSystem {
 			}
 		}
 	}
+	
 
+	/**
+	 * This function allots the college out of available three choices.
+	 * @param{Student} student
+	 */
+	
+	public void allotCollege(Student student) {
+		int flag = 0;
+		int choices[] = student.getChoices();
+		for(int count = 0; count < 3;count++) {
+			College college = collegeList.get(choices[count] - 1);
+			if (college.getSeatsAvailable() > 0) {
+				college.setSeatsAvailable(college.getSeatsAvailable() - 1);
+				student.setAssignedCollegeId(college.getCollegeId());
+				flag = 1;
+				break;
+			}
+		}
+		if(flag == 0) {
+			student.setAssignedCollegeId(-1);
+		}
+		finalallotment.add(student);
+	}
+
+	/**
+	 * This function takes three choices as input.
+	 * @param{Student} student
+	 */
+	
+	public void takeChoices(Student student) {
+		int []choices = new int[3];
+		System.out.println("Enter your 3 choices for college (1,2,3,4,5) ");
+		for(int count = 0; count < 3; count++ ) { 
+			choices[count] = scan.nextInt();
+		}
+		student.setChoices(choices);
+		allotCollege(student);
+	}
+	
 	/**
 	 * This function displays the list of alloted candidates
 	 */
 
-	public static void displayList() {
-		CounselingSystem tempObj = new CounselingSystem();
-		if (tempObj.finalallotment.size() != 0) {
-			System.out.println("Name Of Candidate" + "\t" + "College Name");
-			for (Entry<String, String> m : tempObj.finalallotment.entrySet()) {
-				System.out.println(m.getKey() + "\t\t\t" + m.getValue());
+	public void displayList() {
+		if (this.finalallotment.size() != 0) {
+			System.out.println("Name Of Candidate" + "\t" + "College Id.");
+			for (Student m : this.finalallotment) {
+				System.out.format("%15s%16s\n", m.getName(),m.getAssignedCollegeId());
 			}
 		}
 		else {
@@ -129,3 +135,4 @@ public class CounselingSystem {
 		}
 	}
 }
+
