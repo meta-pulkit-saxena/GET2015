@@ -5,12 +5,14 @@
  * @since: 26 August,2015
  * Creates the student details
  **/
-
+ 
 class Student
 {
 	
 	private String name;
 	private int rank;
+	private int choices[];
+	private int assignedCollegeId;
 	
 	/**
 	 * This is a constructor of student .
@@ -22,6 +24,13 @@ class Student
 	{
 		this.name = name;
 		this.rank = rank;
+	}
+	
+	/**
+	 * This is a default constructor for student.
+	 */
+	
+	public Student() {
 	}
 	
 	/**
@@ -63,4 +72,39 @@ class Student
 	{
 		this.rank = rank;
 	}
-}
+	
+	/**
+	 * This function returns the choices array of the student.
+	 * @return{int[]} choices
+	 */
+	
+	public int[] getChoices() {
+		return choices;
+	}
+
+	/**
+	 * This function sets the choices array of the student.
+	 * @param{int[]} choices 
+	 */
+	
+	public void setChoices(int[] choices) {
+		this.choices = choices;
+	}
+	
+	/**
+	 * This function returns the college id of the college assigned to the student.
+	 * @return{int} the assignedCollegeId
+	 */
+	
+	public int getAssignedCollegeId() {
+		return assignedCollegeId;
+	}
+
+	/**
+	 * This function sets the assigned college id in the respective student.
+	 * @param{int} assignedCollegeId
+	 */
+	
+	public void setAssignedCollegeId(int assignedCollegeId) {
+		this.assignedCollegeId = assignedCollegeId;
+	}
