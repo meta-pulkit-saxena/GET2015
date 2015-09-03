@@ -1,17 +1,18 @@
-import java.io.DataInputStream;
-import java.util.Scanner;
-
 /**
+ * This class runs the whole counseling system.
  * @class CounsellingMain
  * @author Pulkit
  * @since  25th August 15
  */
-public class CounsellingMain {
+
+import java.util.Scanner;
+
+public class CounselingMain {
 
 	public static void main(String args[]) {
 
 		System.out.println("Councelling Manangement System");
-		CounsellingMain obj = new CounsellingMain();
+		CounselingMain obj = new CounselingMain();
 		obj.menuDisplay();
 	}
 
@@ -22,8 +23,9 @@ public class CounsellingMain {
 	public void menuDisplay() {
 		Scanner scan = new Scanner(System.in);
 		String choiceMenu = null;
+		CounselingSystem collegeCounselingSystem = new CounselingSystem();
 		do {
-			System.out.println("Enter 1 for counselling");
+			System.out.println("Enter 1 for Starting counselling");
 			System.out.println("Enter 2 for Chart");
 			System.out.println("Enter 3 for exit");
 			System.out.print("Enter the choice");
@@ -32,18 +34,15 @@ public class CounsellingMain {
 				scan.next();
 			}
 			int choice = scan.nextInt();
-			CounselingSystem collegeCounselingSystem = new CounselingSystem();
 			switch (choice) {
 			case 1:
 				collegeCounselingSystem.initializeSystem();
-				collegeCounselingSystem.enqueueStudents();
 				collegeCounselingSystem.councelingProcess();
 				break;
 			case 2:
-				CounselingSystem.displayList();
+				collegeCounselingSystem.displayList();
 				break;
 			case 3:
-				System.out.println("SystemClosing");
 				System.exit(0);
 				break;
 			default:
