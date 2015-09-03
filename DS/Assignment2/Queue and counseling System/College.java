@@ -10,6 +10,8 @@ public class College {
 	
 		private String name;
 		private int seatsAvailable;
+		private int rank;
+		private int collegeId;
 		
 		/**
 		 * This a is a default constructor.
@@ -24,10 +26,11 @@ public class College {
 		 * @param{int} seatsAvailable
 		 */
 		
-		public College(String name, int seatsAvailable)
-		{
+		public College(String name, int seatsAvailable, int rank, int collegeId) {
 			this.name = name;
 			this.seatsAvailable = seatsAvailable;
+			this.rank = rank;
+			this.collegeId = collegeId;
 		}
 		
 		/**
@@ -63,5 +66,39 @@ public class College {
 			this.seatsAvailable = seatsAvailable;
 		}
 
+
+		/**
+		 * This function returns the rank of the college. 
+		 * @return{int} rank
+		 */
 		
+		public int getRank() {
+			return rank;
+		}
+
+		/**
+		 * This function sets the rank of the college.
+		 * @param rank the rank to set
+		 */
+		
+		public void setRank(int rank) {
+			this.rank = rank;
+		}
+
+		/**
+		 * This function returns the college id of the college.
+		 * @return{int} the collegeId
+		 */
+		
+		public int getCollegeId() {
+			return collegeId;
+		}
+
+		/**This function sets the collegeId of the college.
+		 * @param{int} collegeId the collegeId to set
+		 */
+		
+		public void setCollegeId(int collegeId) {
+			this.collegeId = collegeId;
+		}
 }
