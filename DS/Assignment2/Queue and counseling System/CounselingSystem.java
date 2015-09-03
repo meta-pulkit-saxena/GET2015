@@ -6,8 +6,6 @@
  * This class contains all the functions necessary to perform the counseling for college.
  */
 
-package RevisedAssignment2;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
