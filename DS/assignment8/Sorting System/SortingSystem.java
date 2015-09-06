@@ -7,7 +7,6 @@
  */
 
 package Assignment8;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,6 +93,7 @@ public class SortingSystem {
 	/**
 	 * This function displays the sorted numbers.
 	 */
+	 
 	public void display() {
 		for(int count = 0; count < sortedNumbers.length; count++) {
 		System.out.println(sortedNumbers[count]);
