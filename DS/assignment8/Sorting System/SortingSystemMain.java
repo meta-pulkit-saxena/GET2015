@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class SortingSystemMain {
 
 	/**This is the main function.
-	 * @param args
+	 * @param{String[]} args
 	 */
 	
 	public static void main(String[] args) {
