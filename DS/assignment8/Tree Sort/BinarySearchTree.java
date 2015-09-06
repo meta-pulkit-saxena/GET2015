@@ -14,10 +14,9 @@ public class BinarySearchTree<T> {
 	/**
 	 * This function inserts a node in the tree accoring to the properties of
 	 * the binary search tree.
-	 * 
 	 * @param{TreeNode<T> currentParent
 	 * @param{TreeNode<T> newNode
-	 * @return
+	 * @return{TreeNode<T>}
 	 */
 
 	public TreeNode<T> insertNode(TreeNode<T> currentNode, TreeNode<T> newNode) {
@@ -35,8 +34,7 @@ public class BinarySearchTree<T> {
 
 	/**
 	 * This function prints the nodes in the sorted manner.
-	 * 
-	 * @param{ root
+	 * @param{TreeNode<T>} focused node
 	 */
 
 	public String sort(TreeNode<T> focusedNode) {
