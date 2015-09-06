@@ -41,6 +41,7 @@ public class RemoveDuplicate {
 					choice = scan.next();
 				} while (choice.equalsIgnoreCase("y"));
 				System.out.println(set);
+				scan.close();
 			}
 			catch (Exception e) {
 				System.out.println(set);
