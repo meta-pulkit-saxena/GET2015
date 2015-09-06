@@ -13,9 +13,15 @@ public class Job {
 	private String document;
 	
 	/**
+	 * This is a default constructor of job.
+	 */
+	
+	public Job() {
+	}
+	
+	/**
 	 * This is a parameterized constructor of job. 
 	 * @param{int} priority
-
 	 */
 	
 	public Job(int priority) {
