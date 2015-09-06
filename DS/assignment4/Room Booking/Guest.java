@@ -12,6 +12,19 @@ public class Guest {
 	private String name;
 	private int age;
 	
+	/**
+	 * This is a default constructor of guest.
+	 */
+	
+	public Guest() {
+	}
+	
+	/**
+	 * This is a parameterized constructor of guest.
+	 * @param{String} name 
+	 * @param{int} age
+	 */
+	
 	public Guest(String name,int age) {
 		this.setName(name);
 		this.setAge(age);
