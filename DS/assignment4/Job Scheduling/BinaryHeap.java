@@ -12,21 +12,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinaryHeap {
-	private Job jobObj;
-	private List heap = new ArrayList();
+     private Job jobObj;
+     private List heap = new ArrayList();
    
     /**
      * This function sets the job object of the class.
 	 * @return{Job} jobObj
 	 */
 	
-	public void setJobObj(Job jobObj) {
-		this.jobObj =  jobObj;
-	}
+    public void setJobObj(Job jobObj) {
+	this.jobObj =  jobObj;
+    }
 	
-	/**
-	 * This function is a constructor.
-	 */
+    /**
+     * This function is a default constructor.
+     */
 	
     public BinaryHeap(){
     }
