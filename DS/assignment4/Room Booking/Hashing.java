@@ -18,12 +18,19 @@ public class Hashing {
 	private Guest guest;
 	
 	/**
-	 * This functin sets the guest.
+	 * This function sets the guest.
 	 * @param{Guest} guest
 	 */
 	
 	public void setGuest(Guest guest) {
 		this.guest = guest;
+	}
+
+	/**
+	 * This is a default constructor..
+	 */
+	
+	public Hashing() {
 	}
 
 	/**
@@ -86,6 +93,10 @@ public class Hashing {
 			}
 		}
 	}
+	
+	/**
+	 * This function displays the booking status. Room number and corresponding guest's name. 
+	 */
 	
 	public void displayBookingStatus() {
 		for(Map.Entry<Integer, String> entry : bookingStatus.entrySet()) {
