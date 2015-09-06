@@ -7,14 +7,12 @@
  */
 
 package Assignment8;
-
 import java.util.Scanner;
 
 public class TreeSort {
 
 	/***
 	 * This is main function.
-	 * 
 	 * @param{String[] args
 	 */
 
