@@ -45,6 +45,10 @@ public class SortingAlgorithmsTest {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * This test case tests the bubbleSort function.
+	 */
+	
 	@Test
 	public void testbubbleSort() {
 		SortingAlgorithms obj = new SortingAlgorithms();
@@ -52,6 +56,11 @@ public class SortingAlgorithmsTest {
 		int output[] = {1,2,3,4,5,6,7};
 		assertArrayEquals(output,obj.bubbleSort(input));
 	} 
+	
+	
+	/**
+	 * This test case tests the bubbleSort function for negative input.
+	 */
 	
 	@Test
 	public void testbubbleSortNegative() {
@@ -61,6 +70,10 @@ public class SortingAlgorithmsTest {
 		assertArrayEquals(output,obj.bubbleSort(input));
 	} 
 
+	/**
+	 * This test case tests the radixSort function.
+	 */
+
 	@Test
 	public void testRadixSort() {
 		SortingAlgorithms obj = new SortingAlgorithms();
@@ -68,6 +81,10 @@ public class SortingAlgorithmsTest {
 		int output[] = {1,2,3,4,5,6,7};
 		assertArrayEquals(output,obj.radixSort(input));
 	} 
+	
+	/**
+	 * This test case tests the countingSort function.
+	 */
 	
 	@Test
 	public void testCountingSort() {
@@ -85,6 +102,10 @@ public class SortingAlgorithmsTest {
 		assertArrayEquals(output,obj.quickSort(input));
 	} 
 	
+	/**
+	 * This test case tests the quickSort function for negative input.
+	 */
+	
 	@Test
 	public void testQuickSortNegative() {
 		SortingAlgorithms obj = new SortingAlgorithms();
@@ -92,6 +113,10 @@ public class SortingAlgorithmsTest {
 		int output[] = {-3,-2,-1,4,5,6,10};
 		assertArrayEquals(output,obj.quickSort(input));
 	} 
+	
+	/**
+	 * This test case tests the countingSort function for worst case.
+	 */
 	
 	@Test
 	public void testCountingSortWorstCase() {
