@@ -7,7 +7,6 @@
  */
 
 package Assignment8;
-
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -46,6 +45,10 @@ public class TreeSortTest {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * This test case tests the insertNode function of binary tree.
+	 */
+	 
 	@Test
 	public void testInsert() {
 		BinarySearchTree<Integer> treeObj = new BinarySearchTree<Integer>();
@@ -55,7 +58,11 @@ public class TreeSortTest {
 		String output = "123456";
 		assertEquals(output, treeObj.sort(treeObj.root));
 	}
-
+	
+	/**
+	 * This test case tests the insertNode function for null input.
+	 */
+	
 	@Test
 	public void testNull() {
 		BinarySearchTree<Integer> treeObj = new BinarySearchTree<Integer>();
@@ -63,6 +70,10 @@ public class TreeSortTest {
 		String output = "null";
 		assertEquals(output, treeObj.sort(treeObj.root));
 	}
+	
+	/**
+	 * This test case tests the insertNode function for negative input.
+	 */
 	
 	@Test
 	public void testNegative() {
