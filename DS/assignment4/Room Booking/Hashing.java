@@ -18,15 +18,6 @@ public class Hashing {
 	private Guest guest;
 	
 	/**
-	 * This function sets the guest.
-	 * @param{Guest} guest
-	 */
-	
-	public void setGuest(Guest guest) {
-		this.guest = guest;
-	}
-
-	/**
 	 * This is a default constructor..
 	 */
 	
@@ -41,6 +32,15 @@ public class Hashing {
 	public Hashing(int totalRooms) {
 		this.numberOfRooms = totalRooms;
 		bookingStatus = new HashMap<Integer, String>();
+	}
+	
+	/**
+	 * This function sets the guest.
+	 * @param{Guest} guest
+	 */
+	
+	public void setGuest(Guest guest) {
+		this.guest = guest;
 	}
 	
 	/**
