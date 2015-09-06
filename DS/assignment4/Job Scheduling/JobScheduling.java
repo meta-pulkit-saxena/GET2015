@@ -43,10 +43,9 @@ public class JobScheduling {
 			System.out.println("Do you want to enter more jobs(y/n)");
 			choice = scan.next();
 		}while(choice.equalsIgnoreCase("y") );
-
-	System.out.println("The order of jobs are: ");
-	while(!maxHeap.isEmpty()){
-        System.out.println(maxHeap.remove());
-    }
+		System.out.println("The order of jobs are: ");
+		while(!maxHeap.isEmpty()){
+        	System.out.println(maxHeap.remove());
+    		}
 	}
 }
