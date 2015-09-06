@@ -1,8 +1,8 @@
 
 /**
- * @class  ConcrdanceFunction
+ * @class  ConcordanceFunction
  * @author Pulkit
- * @since  1th September 15
+ * @since  1st September 15
  * This class contains the functions related to the calculating of concordance.
  */
 
