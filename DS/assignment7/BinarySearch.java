@@ -1,19 +1,13 @@
 
 /**
  * @author Pulkit
- *
- */
-
-package assignmentDS7;
-
-import java.util.Scanner;
-
-/**
- * @author Pulkit
- * @since  10th August 15
+ * @since  29th August 15
  * Name BinarySearch
  * This class contains binarySearch()
  */
+
+package assignmentDS7;
+import java.util.Scanner;
 
 public class BinarySearch {
 	public int index = -1;
