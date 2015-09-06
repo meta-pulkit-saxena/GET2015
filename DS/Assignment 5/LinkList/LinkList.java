@@ -31,25 +31,25 @@ public class LinkList {
 			choice = scan.nextInt();
 			switch(choice) {
 				case 1:
-						System.out.println("Enter a number: ");
-						number = scan.nextInt();
-						linkListObject.insert(number);;
-						break;
+					System.out.println("Enter a number: ");
+					number = scan.nextInt();
+					linkListObject.insert(number);;
+					break;
 				case 2:
-						linkListObject.sort();
-						break;
+					linkListObject.sort();
+					break;
 				case 3:
-						System.out.println("Enter the location: ");
-						loc = scan.nextInt();
-						System.out.println("Enter the value to be entered at given location");
-						number = scan.nextInt();
-						linkListObject.insert(number, loc);
-						break;
+					System.out.println("Enter the location: ");
+					loc = scan.nextInt();
+					System.out.println("Enter the value to be entered at given location");
+					number = scan.nextInt();
+					linkListObject.insert(number, loc);
+					break;
 				case 4:
-						linkListObject.display();
-						break;
+					linkListObject.display();
+					break;
 				default:
-						System.out.println("Enter correct choice");
+					System.out.println("Enter correct choice");
 			}
 		} while(true);
 
