@@ -30,5 +30,6 @@ public class FrequencyMain {
 			System.out.println("Enter y to add more records and press other key to exit");
 			choice = scan.next();
 		} while (choice.equalsIgnoreCase("y"));
+		scan.close();
 	}
 }
