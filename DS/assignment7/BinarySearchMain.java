@@ -1,15 +1,22 @@
 
+/**
+ * @class  BinarySearchMain
+ * @author Pulkit
+ * @since  29th August 15
+ * This class contains the main function.
+ */
+ 
 package assignmentDS7;
-
 import java.util.Scanner;
 
-/**
- * @author Pulkit
- *
- */
 public class BinarySearchMain {
 	
-public static void main(String[] args) {
+	/**
+ 	* This is the main funtion.
+ 	* @param{Strings[]} args
+	 */
+	 
+	public static void main(String[] args) {
 		
 		BinarySearch obj = new BinarySearch();
 		int arrSize, key, leftLocation;
@@ -31,6 +38,7 @@ public static void main(String[] args) {
 			else {
 				System.out.println("Element found at location: " + leftLocation);
 			}
+			scan.close();
 		}
 		catch(Exception e) {
 			e.printStackTrace();
