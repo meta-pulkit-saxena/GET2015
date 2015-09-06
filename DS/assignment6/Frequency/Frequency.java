@@ -1,16 +1,17 @@
 
-package assignment6;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * @class  Frequency
  * @author Pulkit
  * @since  02nd September 15
  * This class defines findFrequency function.
  */
+ 
+ package assignment6;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Frequency {	
 	 private HashMap<String, Integer> cache = new HashMap<String, Integer>();
 		
