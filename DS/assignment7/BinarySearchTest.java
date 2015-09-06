@@ -1,7 +1,14 @@
+
+/**
+ * @class  BinarySearchTest
+ * @author Pulkit
+ * @since  29th August 15
+ * This class contains the test cases for binary search.
+ */
+
 package assignmentDS7;
 
 import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -26,6 +33,10 @@ public class BinarySearchTest {
 	public void tearDown() throws Exception {
 	}
 
+	/**
+ 	* This funtion tests the binary search function.
+ 	*/
+ 	
 	@Test
 	public void testBinarySearchFirst() {
 		BinarySearch object = new BinarySearch();
@@ -33,7 +44,11 @@ public class BinarySearchTest {
 		int expected = 1;
 		assertEquals(expected,object.binarySearch(inputArray, 2, 0,inputArray.length-1));
 	}
-
+	
+	/**
+ 	* This funtion tests the binary search function.
+ 	*/
+ 	
 	@Test
 	public void testSearchSecond() {
 		BinarySearch object = new BinarySearch();
@@ -41,6 +56,10 @@ public class BinarySearchTest {
 		int expected = 0;
 		assertEquals(expected,object.binarySearch(inputArray, 1, 0,inputArray.length-1));
 	}
+	
+	/**
+ 	* This funtion tests the binary search function.
+ 	*/
 	
 	@Test
 	public void testBinarySearchThree() {
