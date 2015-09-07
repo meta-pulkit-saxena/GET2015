@@ -13,7 +13,7 @@ import java.util.List;
 
 public class BinaryHeap {
      private Job jobObj;
-     private List heap = new ArrayList();
+     private List<Integer> heap = new ArrayList<Integer>();
    
     /**
      * This function sets the job object of the class.
@@ -36,7 +36,6 @@ public class BinaryHeap {
      */
     
     public void add(){
-    	heap.add(null);
         int location = heap.size()-1;
         while (location > 0){
             int parent = (location-1)/2;
@@ -62,9 +61,9 @@ public class BinaryHeap {
 
         while(location < heap.size() /2){
             int child = 2*location + 1; 
-            if(child < heap.size() -1 &&
-               (new Integer(heap.get(child).toString()).intValue() <
-                new Integer(heap.get(child+1).toString()).intValue()    )){
+            int value = new Integer(heap.get(child).toString()).intValue();
+            int valueSecond = new Integer(heap.get(child+1).toString()).intValue();
+            if(child < heap.size() -1 && value < valueSecond){
                 child++;
             }
             if(key >= new Integer(heap.get(child).toString()).intValue()){
