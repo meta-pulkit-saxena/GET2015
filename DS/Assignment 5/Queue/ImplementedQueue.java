@@ -30,20 +30,16 @@ public class ImplementedQueue {
 			choice = scan.nextInt();
 			switch(choice) {
 				case 1:
-						System.out.println("Enter a number: ");
-						number = scan.nextInt();
-						newQueue.enqueue(number);
-						break;
+					System.out.println("Enter a number: ");
+					number = scan.nextInt();
+					newQueue.enqueue(number);
+					break;
 				case 2:
-						if(newQueue.queue.size() != 0) {
-							result = newQueue.dequeue();
-							System.out.println("Removed Element is: " + result);
-						}
-						else
-							System.out.println("Queue is Empty");
-						break;
+					result = newQueue.dequeue();
+					System.out.println("Removed Element is: " + result);
+					break;
 				default:
-						System.out.println("Enter correct choice");
+					System.out.println("Enter correct choice");
 			}
 		} while(true);
 	}
