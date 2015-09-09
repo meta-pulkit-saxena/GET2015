@@ -13,7 +13,7 @@ import java.util.List;
 
 public class LinkListInsertion {
 
-	public  List<Integer> InternalList = new LinkedList<Integer>();
+	public  List<Integer> internalList = new LinkedList<Integer>();
 
 	/**
 	 * This function inserts the value in the linkList using recursive method.
@@ -23,17 +23,17 @@ public class LinkListInsertion {
 	
 	public void insert(int value, int index) {
 
-		if (index == InternalList.size()) {
+		if (index == internalList.size()) {
 
 			insert(value);
 		} else
 
-		if ((int)InternalList.get(index) < value) {
+		if ((int)internalList.get(index) < value) {
 
 			insert(value, index + 1);
 
 		} else {
-			InternalList.add(index, value);
+			internalList.add(index, value);
 		}
 	}
 
@@ -43,7 +43,7 @@ public class LinkListInsertion {
 	 */
 	
 	public void insert(int value) {
-		InternalList.add(value);
+		internalList.add(value);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class LinkListInsertion {
 	 */
 	
 	public void sort() {
-		Collections.sort(InternalList);
+		Collections.sort(internalList);
 	}
 
 	/**
@@ -59,6 +59,6 @@ public class LinkListInsertion {
 	 */
 	
 	public void display() {
-		System.out.println(InternalList);
+		System.out.println(internalList);
 	}
 }
