@@ -25,7 +25,7 @@ public class LinkListInsertion {
 
 		if (index == InternalList.size()) {
 
-			InternalList.add(value);
+			insert(value);
 		} else
 
 		if ((int)InternalList.get(index) < value) {
@@ -51,7 +51,7 @@ public class LinkListInsertion {
 	 */
 	
 	public void sort() {
-		InternalList.sort(null);
+		Collections.sort(InternalList);
 	}
 
 	/**
