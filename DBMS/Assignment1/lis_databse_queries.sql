@@ -57,10 +57,11 @@ CREATE TABLE titles(
 -- Inserting rows in books table.
 
 CREATE TABLE books(
-	accession_no INT,
+  accession_no INT,
 	title_id INT,
 	purchase_dt DATE,
 	price DECIMAL(12,2),
+  status INT CHECK (status IN(0,1)),
 	FOREIGN KEY(title_id ) REFERENCEs titles(title_id ) ON DELETE CASCADE,
 	PRIMARY KEY(accession_no)
 );
@@ -187,7 +188,8 @@ DELIMITER ;
 -- Inserting rows in members table.
 
 INSERT INTO members (member_id,member_nm,addressline1,addressline2,category) VALUES
-(21,"Rohan","Durgapur","jaipur","F"),
+(21,"Rohan","Durgapur","Jaipur","F"),
+(29,"Nishant","Fort Street","Indore","F"),
 (45,"Piyush","Patparganj","Delhi","S");
 
 -- Inserting rows in subjects table.
@@ -218,9 +220,9 @@ INSERT INTO titles (title_id,title_nm,subject_id,publisher_id) VALUES
 
 -- Inserting rows in books table.
 
-INSERT INTO books (accession_no,title_id,purchase_dt,price) VALUES
-(55,12,"2015-05-14",749.0),
-(77,14,"2015-06-11",870.54);
+INSERT INTO books (accession_no,title_id,purchase_dt,price,status) VALUES
+(55,12,"2015-05-14",749.0,0),
+(77,14,"2015-06-11",870.54,1);
 
 -- Inserting rows in book_issue table.
 
@@ -294,17 +296,20 @@ SET @accession_no = 55;
 SET @title_id = 12;
 SET @purchase_dt = "2015-05-14";
 SET @price = 749.0;
+SET @status = 0;
 
-INSERT INTO books (accession_no,title_id,purchase_dt,price) VALUES
-(@accession_no,@title_id,@purchase_dt,@price);
+INSERT INTO books (accession_no,title_id,purchase_dt,price,status) VALUES
+(@accession_no,@title_id,@purchase_dt,@price,@status);
 
 SET @accession_no = 77;
 SET @title_id = 14;
 SET @purchase_dt = "2015-06-11";
 SET @price = 870.54;
+SET @status = 1;
 
-INSERT INTO books (accession_no,title_id,purchase_dt,price) VALUES
-(@accession_no,@title_id,@purchase_dt,@price);
+
+INSERT INTO books (accession_no,title_id,purchase_dt,price,status) VALUES
+(@accession_no,@title_id,@purchase_dt,@price,@status);
 
 
 
@@ -354,9 +359,6 @@ SET @issue_dt = "2015-09-01";
 
 INSERT INTO book_return(return_date,accession_no,member_id,issue_dt) VALUES
 (@return_date,@accession_no,@member_id,@issue_dt);
-
-
-
 
 -- Deleting rows in titles where publisher_id = 1.
 
