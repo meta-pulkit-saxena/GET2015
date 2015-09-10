@@ -3,7 +3,7 @@
  * @author Pulkit
  * @since  29th August 15
  * Name BinarySearch
- * This class contains binarySearch()
+ * This class contains the definition of recursive binary search function.
  */
 
 package assignmentDS7;
@@ -19,7 +19,7 @@ public class BinarySearch {
 	 * @param{int} start
 	 * @param{int} end
 	 * @return{int} location of key in array
-	 * finds element using binary sorting
+	 * Finds element's leftmost location using binary sorting recursively.
 	 */
 	
 	public int binarySearch(int []array,int key,int start,int end) {
