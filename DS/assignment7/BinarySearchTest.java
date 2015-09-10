@@ -68,4 +68,16 @@ public class BinarySearchTest {
 		int expected = 4;
 		assertEquals(expected,object.binarySearch(inputArray, 2, 0,inputArray.length-1));
 	}
+	
+	/**
+	 * This function tests the binary search function for a input not present in the array.
+	 */
+	
+	@Test
+	public void testBinarySearchFour() {
+		BinarySearch object = new BinarySearch();
+		int inputArray[] ={1,1,1,1,2,1}; 
+		int expected = -1;
+		assertEquals(expected,object.binarySearch(inputArray, 7, 0,inputArray.length-1));
+	}
 }
