@@ -14,10 +14,10 @@ import java.util.Set;
 
 public class Frequency {	
 	 private HashMap<String, Integer> cache = new HashMap<String, Integer>();
-		
+	 private Set<Character> set = new HashSet<Character>();
 	 public int findFrequency(String input) {
 			int result = 0;
-			Set<Character> set = new HashSet<Character>();
+		
 			if (cache.containsKey(input)) {
 				return cache.get(input);
 			}
@@ -26,6 +26,7 @@ public class Frequency {
 				set.add(ch);
 			}
 			result = set.size();
+			set.clear();
 			cache.put(input, result);
 			return result;
 	}
