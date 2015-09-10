@@ -7,7 +7,7 @@ CREATE DATABASE lis;
 
 USE lis;
 
--- Inserting rows in members table.
+-- Creating members table.
 
 CREATE TABLE members(
 	member_id INT,
@@ -18,7 +18,7 @@ CREATE TABLE members(
 	PRIMARY KEY(member_id)
 );
 
--- Inserting rows in subjects table.
+-- Creating subjects table.
 
 CREATE TABLE subjects(
 	subject_id INT,
@@ -26,7 +26,7 @@ CREATE TABLE subjects(
 	PRIMARY KEY(subject_id)
 );
 
--- Inserting rows in publishers table.
+-- Creating publishers table.
 
 CREATE TABLE publishers(
 	publisher_id INT,
@@ -34,7 +34,7 @@ CREATE TABLE publishers(
 	PRIMARY KEY(publisher_id)
 );
 
--- Inserting rows in authors table.
+-- Creating authors table.
 
 CREATE TABLE authors(
 	author_id INT,
@@ -42,7 +42,7 @@ CREATE TABLE authors(
 	PRIMARY KEY(author_id)
 );
 
--- Inserting rows in titles table.
+-- Creating titles table.
 
 CREATE TABLE titles(
 	title_id INT,
@@ -54,7 +54,7 @@ CREATE TABLE titles(
 	PRIMARY KEY(title_id)
 );
 
--- Inserting rows in books table.
+-- Creating books table.
 
 CREATE TABLE books(
   accession_no INT,
@@ -66,7 +66,7 @@ CREATE TABLE books(
 	PRIMARY KEY(accession_no)
 );
 
--- Inserting rows in book_issue table.
+-- Creating book_issue table.
 
 CREATE TABLE book_issue(
 	issue_dt DATE,
@@ -79,9 +79,7 @@ CREATE TABLE book_issue(
 	FOREIGN KEY(accession_no) REFERENCES books(accession_no ) ON DELETE CASCADE
 );
 
-
-
--- Inserting rows in title_author table.
+-- Creating title_author table.
 
 CREATE TABLE title_author(
 	title_id INT,
@@ -91,7 +89,7 @@ CREATE TABLE title_author(
 	PRIMARY KEY(title_id, author_id)
 );
 
--- Inserting rows in book_return table.
+-- Creating book_return table.
 
 CREATE TABLE book_return(
 	return_date DATE,
@@ -135,7 +133,7 @@ DROP TABLE book_return;
 
 DROP TABLE members;
 
--- Inserting rows in members table.
+-- Creating members table.
 
 CREATE TABLE members(
 	member_id INT,
@@ -146,7 +144,7 @@ CREATE TABLE members(
 	PRIMARY KEY(member_id)
 );
 
--- Inserting rows in book_issue table.
+-- Creating book_issue table.
 
 CREATE TABLE book_issue(
 	issue_dt DATE,
@@ -159,7 +157,7 @@ CREATE TABLE book_issue(
 	FOREIGN KEY(accession_no) REFERENCES books(accession_no ) ON DELETE CASCADE
 );
 
--- Inserting rows in book_return table.
+-- Creating book_return table.
 
 CREATE TABLE book_return(
 	return_date DATE,
@@ -226,9 +224,9 @@ INSERT INTO books (accession_no,title_id,purchase_dt,price,status) VALUES
 
 -- Inserting rows in book_issue table.
 
-INSERT INTO book_issue (accession_no,member_id) VALUES
-(77,21),
-(55,45);
+INSERT INTO book_issue (accession_no,member_id,due_date) VALUES
+(77,21,"2015-11-17"),
+(55,45,"2015-10-12");
 
 -- Inserting rows in title_author table.
 
@@ -310,8 +308,6 @@ SET @status = 1;
 
 INSERT INTO books (accession_no,title_id,purchase_dt,price,status) VALUES
 (@accession_no,@title_id,@purchase_dt,@price,@status);
-
-
 
 -- Inserting rows using substitution method in book_issue table.
 
