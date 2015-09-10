@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class BinarySearch {
 	public int index = -1;
-	public int flag =0;
+	
 	/**
 	 * Name binarySearch
 	 * @param{int[]} array
@@ -24,23 +24,22 @@ public class BinarySearch {
 	
 	public int binarySearch(int []array,int key,int start,int end) {
 		
-		int mid  = (start + end)/2; 																		// mid calculation
+		int mid  = (start + end)/2; 								// mid calculation
 		if(start > end) {
 			return index;
 		}
 		if(array[end] < key) {
 			return -1;
 		}
-		if(start == end && array[mid] != key ) {                                                         	// exit point
+		if(start == end && array[mid] != key ) {                                               	// exit point
 			return -1;
 		}
-		if(array[mid] == key)	{																		  	// element found
-			 index = mid;
-			 flag = 1;																						// To check if element is found or not
+		if(array[mid] == key)	{								// element found
+			 index = mid;																						
 			 binarySearch(array,key,start,mid-1);
 			 return index;
 		}
-		return key > array[mid] ? binarySearch(array,key,mid+1,end) : binarySearch(array,key,start,mid-1);  // recursive call
+		return key > array[mid] ? binarySearch(array,key,mid+1,end) : binarySearch(array,key,start,mid-1);      // recursive call
 		
 	}
 }
