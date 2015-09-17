@@ -26,12 +26,12 @@ ORDER BY member_nm DESC;
 
 -- To select title name, subject name, publisher name from titles, subjects and publishers tables.
 
-SELECT T.title_nm, S.subject_nm, P.publisher_nm FROM titles AS T, subjects AS S, publishers AS P
-WHERE T.subject_id  = S.subject_id AND T.publisher_id = P.publisher_id;
+SELECT t.title_nm, s.subject_nm, p.publisher_nm FROM titles AS t, subjects AS s, publishers AS p
+WHERE t.subject_id  = s.subject_id AND t.publisher_id = p.publisher_id;
 
 -- To display count of each category type from members table 
 
-SELECT category, COUNT(*) FROM members
+SELECT category, COUNT(member_id) FROM members
 GROUP BY category;
 
 -- To display member name from from members table where category is same as of Rohan.
