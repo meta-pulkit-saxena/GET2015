@@ -11,9 +11,9 @@ SET due_date = "2015-11-12";
 --  To display records which have due date greater than 60 days.
 --  Question 1
 
-Select m.member_nm,m.member_id,t.title_nm,bi.accession_no,bi.issue_dt,bi.due_date, DATEDIFF(due_Date,issue_dt ) AS DiffDate 
+Select m.member_nm,m.member_id,t.title_nm,bi.accession_no,bi.issue_dt,bi.due_date, DATEDIFF(due_Date,NOW() ) AS DiffDate 
 FROM members As m, titles AS t, books AS b, book_issue AS bi
-WHERE (bi.member_id = m.member_id && bi.accession_no = b.accession_no && b.title_id = t.title_id && (DATEDIFF(bi.due_date,bi.issue_dt) > 60)) ORDER BY m.member_nm, t.title_nm;
+WHERE (bi.member_id = m.member_id && bi.accession_no = b.accession_no && b.title_id = t.title_id && (DATEDIFF(bi.due_date,NOW()) > 60)) ORDER BY m.member_nm, t.title_nm;
 
 -- To display member name with longest name along with its length.
 
