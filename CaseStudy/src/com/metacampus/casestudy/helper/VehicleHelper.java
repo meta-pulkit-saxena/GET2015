@@ -1,8 +1,3 @@
-package com.metacampus.casestudy.helper;
-
-import com.metacampus.casestudy.modal.Bike;
-import com.metacampus.casestudy.modal.Car;
-import com.metacampus.casestudy.modal.Vehicle;
 
 /**
  * @class  VehicleHelper
@@ -10,6 +5,12 @@ import com.metacampus.casestudy.modal.Vehicle;
  * @since  14th September 15
  * This class contains all the helper functions related to vehicle.
  */
+
+package com.metacampus.casestudy.helper;
+
+import com.metacampus.casestudy.modal.Bike;
+import com.metacampus.casestudy.modal.Car;
+import com.metacampus.casestudy.modal.Vehicle;
 
 public class VehicleHelper {
 	
