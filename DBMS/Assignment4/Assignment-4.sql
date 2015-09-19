@@ -17,9 +17,9 @@ WHERE category = ( SELECT category FROM members WHERE member_nm = "KESHAV SHARMA
 
 -- To display the details of book which is still not returned.
 
-SELECT bi.issue_dt, t.title_nm, m.member_nm, bi.due_date FROM book_issue AS bi, books AS b, members AS m, book_return AS br, titles AS t
-WHERE m.member_id = br.member_id 
-AND t.title_id = b.title_id AND br.issue_dt <> bi.issue_dt AND br.accession_no <> bi.accession_no AND bi.member_id <> br.member_id;
+SELECT bi.issue_dt, bi.due_date, m.member_nm, t.title_id FROM book_issue AS bi, members AS m, titles AS t, books AS b WHERE bi.member_id = m.member_id AND bi.accession_no = b.accession_no
+AND b.title_id = t.title_id AND bi.accession_no NOT IN ( SELECT bi.accession_no FROM book_issue AS bi, book_return AS br WHERE bi.accession_no = br.accession_no AND bi.member_id = br.member_id);
+
 
 -- To display details of the books returned after due date.
 
