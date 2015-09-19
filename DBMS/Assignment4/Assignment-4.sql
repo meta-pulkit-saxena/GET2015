@@ -29,8 +29,7 @@ AND t.title_id = b.title_id AND br.issue_dt = bi.issue_dt AND br.accession_no = 
 
 -- To display details of costliest book.
 
-SELECT accession_no, title_id, purchase_dt, price FROM books
-WHERE price = (SELECT MAX(price) FROM books);
+SELECT price FROM books ORDER BY price DESC LIMIT 1, 1;
 
 -- To display details of second costliest book.
 
