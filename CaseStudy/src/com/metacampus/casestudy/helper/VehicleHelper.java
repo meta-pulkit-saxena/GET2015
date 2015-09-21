@@ -16,9 +16,9 @@ public class VehicleHelper {
 	
 	/**
 	 * This function creates a Vehicle object according to the type passed to the function.
-	 * @param vehicleType
-	 * @param modal
-	 * @param make
+	 * @param{VehicleType} vehicleType
+	 * @param{String} model
+	 * @param{String} make
 	 * @return
 	 */
 	
