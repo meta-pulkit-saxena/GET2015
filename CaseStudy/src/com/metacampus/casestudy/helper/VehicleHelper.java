@@ -19,7 +19,7 @@ public class VehicleHelper {
 	 * @param{VehicleType} vehicleType
 	 * @param{String} model
 	 * @param{String} make
-	 * @return
+	 * @return{Vehicle}
 	 */
 	
 	public static Vehicle createVehicle(VehicleType vehicleType, String model, String make) {
