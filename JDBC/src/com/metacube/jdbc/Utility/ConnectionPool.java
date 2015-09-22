@@ -17,7 +17,7 @@ public class ConnectionPool {
 	private final String DATABASE_URL = "jdbc:mysql://localhost:3306/lis";       
 	private final String USER = "root";
 	private final String PASSWORD = "mysql";		
-	private Vector<Connection> connectionPool = new Vector<Connection>();
+	private static Vector<Connection> connectionPool = new Vector<Connection>();
 	
 	/**
 	 * This is the constructor of connection pool.
