@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	background-color: #99CCFF;
+	margin:0px;
+}
+
+header {
+	border: solid 1px;
+	background-color: #6699FF;
+	text-align: center;
+}
+
+#maindiv div {
+	float: left;
+}
+
+#firstdiv {
+	width: 30%;
+}
+
+#seconddiv {
+	width: 70%;
+}
+
+#seconddiv div {
+	width: 60%;
+	text-align: left;
+	margin-top: 4%;
+	margin-left: 20%;
+}
+
+#seconddiv div ul li {
+	list-style: none;
+	font-size: large;
+}
+
+#firstdiv img {
+	margin-left: 30%;
+	margin-top: 20%;
+}
