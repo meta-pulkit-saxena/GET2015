@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+
+/* To define the key frames*/
+
+@keyframes animate {
+    0%   {background-color: red; left:200px; top:0px;}
+    25%  {background-color: yellow; left:400px; top:200px;}
+    50%  {background-color: blue; left:600px; top:0px;}
+    75%  {background-color: green; left:800px; top:200px;}
+    100% {background-color: red; left:1000px; top:0px;}
+}
+
+/*To define css for animate div*/
+
+.animate {
+	width: 200px;
+    height: 200px;
+    margin-left: 200px;
+    margin-top: 200px;
+    position: relative;
+    background-color: red;
+    animation-name: animate;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+}
+
+/* To define css for body*/
+
+body {
+	background-color: #6699FF;
+}

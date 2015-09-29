@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+/* To define css for leaf div*/
+
+#leaf {
+	width:100px;
+	height:100px;
+	background-color:#0093D9;
+	border-width:8px 8px 8px 8px;
+	border-style:double;
+	border-color:blue;
+	border-radius: 100px 0px 100px 0px;
+	-webkit-border-radius: 100px 0px 100px 0px;  
+	-moz-border-radius: 100px 0px 100px 0px
+}
+
+/* To define css for body*/
+
+body {
+	background-image: url(../Resources/Background2.jpg), url(../Resources/Background1.jpg);
+	background-position: center , right top;
+	background-repeat: no-repeat, no-repeat;
+}
+

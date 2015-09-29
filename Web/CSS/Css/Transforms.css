@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+
+/* To define css for body*/
+
+body {
+	background-color: #6699FF;
+	padding-left: 300px;
+}
+
+/* To define css for all div.*/
+
+body div {
+	width: 200px;
+	height: 200px;
+	background-color: #FF9933;
+	border: solid 2px #6699FF;
+	position: relative;
+	float: left;
+	margin-top: 200px;
+	margin-left: 100px;
+	text-align: center;
+	padding-top: 0px;
+}
+
+/* To define transform property for scale div.*/
+
+.scale:hover {
+	transform: scale(2,2);
+}
+
+/* To define transform property for rotate div.*/
+
+.rotate:hover {
+	transform: rotate(40deg);
+}
+
+/* To define transform property for skew div.*/
+
+.skew:hover {
+	transform: skew(20deg,30deg);
+}
