@@ -28,9 +28,9 @@ public class GeneralizedList<E> {
 		Scanner scan = new Scanner(System.in);
 		obj.traverse(obj.start);
 		System.out.println("\n" + "Sum:" 
-								+ obj.sum(obj.start) 
-								+"\nMax:" 
-								+ obj.max(obj.start));
+					+ obj.sum(obj.start) 
+					+"\nMax:" 
+					+ obj.max(obj.start));
 		System.out.println("Enter the element to be searched");
 		int find = scan.nextInt();
 		System.out.println(obj.find(obj.start, find));
