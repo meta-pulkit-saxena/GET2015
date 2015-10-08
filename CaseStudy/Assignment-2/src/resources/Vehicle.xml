@@ -14,7 +14,7 @@
   		<powerSteering>true</powerSteering> 
   		<accessoryKit>true</accessoryKit> 
   	</Car>
-  		<Bike>
+  	<Bike>
 		<id>2</id>
   		<make>Bajaj</make>
   		<model>Pulsar</model> 
