@@ -9,7 +9,7 @@ body {
 
 /* To define css for all div.*/
 
-body div {
+.scale, .rotate, .skew {
 	width: 200px;
 	height: 200px;
 	background-color: #FF9933;
