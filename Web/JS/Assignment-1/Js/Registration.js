@@ -63,18 +63,25 @@ function validate()
 
 function createCity() 
 {
+	var m = new Map();
+	var value1 = ["Jaipur","Udaipur","Kota","Ajmer"];
+	var value2 = ["Bareilly","Kanpur","Lucknow","Mathura"]
+	m.set("Rajasthan",value1);
+	m.set("UP",value2);
+	var stateObject = document.getElementById("state").value;
 	var cityObject = document.getElementById("city");
-	var stateObject = document.getElementById("state");
-	switch(stateObject.value) 
+	switch(stateObject) 
 	{
 		case "Rajasthan" :
-			cityObject.innerHTML = "<Option>Jaipur</option><Option>Udaipur</option><Option>Kota</option><Option>Ajmer</option>";
+			var value = m.get("Rajasthan");
+			var options = "<option>" + value[0] + "</option>" + "<option> "+ value[1] + "</option>" + "<option>" + value[2] + "</option>" + "<option>" + value[3] + "</option>";
+			cityObject.innerHTML = options;
 			break;
 		case "UP" :
-			cityObject.innerHTML = "<Option>Bareilly</option><Option>Kanpur</option><Option>Lucknow</option><Option>Mathura</option>";
+			var value = m.get("UP");
+			var options = "<option>" + value[0] + "</option>" + "<option> "+ value[1] + "</option>" + "<option>" + value[2] + "</option>" + "<option>" + value[3] + "</option>";
+			cityObject.innerHTML = options;
 			break;
 	}
-}
-
 
 	
