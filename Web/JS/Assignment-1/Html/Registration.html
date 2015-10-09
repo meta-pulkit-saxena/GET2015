@@ -10,33 +10,37 @@
 <body>
 	<section>
 		<h2>INFORMATION</h2>
-		<form onSubmit="validate()">
+		<form id="myForm">
 			<!-- Table For Data To Symmetric -->
 			<table >
 				<tr>
 					<!-- Name Label -->
 					<td>Enter First Name<span id="span"> *</span></td>
 					<td><input type="text" id="firstName" name="firstName"></td>
+					<td><label id="firstName-error" class="error"></label></td>
 				</tr>
 				<tr>
 					<!-- Last Name -->
 					<td>Enter Last Name<span id="span"> *</span></td>
 					<td><input type="text" id="lastName" name="lastName"></td>
+					<td><label id="lastName-error" class="error"></label></td>
 				</tr>
 				<tr>
 					<!-- Password -->
 					<td>Enter Password <span id="span"> *</span></td>
 					<td><input type="password" id="password" name="password"></td>
+					<td><label id="password-error" class="error"></label></td>
 				</tr>
 				<tr>
 					<!--  Confirm Password -->
 					<td>Confirm Password<span id="span"> *</span></td>
 					<td><input type="password" id="confirmPassword" name="confirmPassword"></td>
+					<td><label id="confirm-error" class="error"></label></td>
 				</tr>
 				<tr>
 					<!--  Age Field -->
 					<td>Enter Your Age <span id="span"> *</span></td>
-					<td><input type="number" id="age" min="12" max="75" step="any" name="age"></td>
+					<td><input type="number" id="age" min="1" max="120" step="any" name="age"></td>
 				</tr>
 				<tr>
 					<!--  State Name -->
@@ -47,17 +51,20 @@
 							<option value="UP">Uttar Pradesh</option>
 					</Select></td>
 				</tr>
+				<tr><td><label id="state-error" class="error"></label></td></tr>
 				<tr>
 					<!-- City Name -->
 					<td>Select City <span id="span"> *</span></td>
 					<td><select id="city" name="city">
 							<option>Select City</option>
 					</select></td>
+					<td><label id="city-error" class="error"></label></td>
 				</tr>
 				<tr>
 					<!--  Address -->
 					<td>Enter Your Address <span id="span"> *</span></td>
 					<td><textarea id="addressLine1" rows="3"></textarea></td>
+					<td><label id="address-error" class="error"></label></td>
 				</tr>
 				<tr>
 					<!-- conditions checkbox -->
@@ -68,8 +75,8 @@
 				</tr>
 				<tr>
 					<!-- Submission Button -->
-					<td colspan="2"><input type="Submit" value="Create!!"
-						id="submitButton" disabled></td>
+					<td colspan="2"><input type="button" value="Create"
+						id="button" onclick="validate()" disabled></td>
 				</tr>
 			</table>
 		</form>
