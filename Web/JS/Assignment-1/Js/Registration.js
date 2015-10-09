@@ -55,11 +55,6 @@ function validate()
 	{
 		alert("USER CREATED SUCCESSFUL");
 	}
-	else 
-	{
-		alert(document.getElementById("textBox").value);
-	}
-	
 }
 
 // function to fill The cities
