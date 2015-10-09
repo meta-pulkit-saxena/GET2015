@@ -6,16 +6,17 @@ function activateSubmit()
 
 	if(document.getElementById("acceptCondition").checked == true)
 	{
-		document.getElementById("submitButton").disabled = false;
+		document.getElementById("button").disabled = false;
 		
 	}
 	else 
 	{
-		document.getElementById("submitButton").disabled = true;
+		document.getElementById("button").disabled = true;
 	}
 }
 
 // Validation for Checking all the conditions
+
 
 function validate()
  {
@@ -24,36 +25,37 @@ function validate()
 	if(document.getElementById("firstName").value.trim() == "")
 	{
 		count=1;
-		alert("First Name Is Empty");
+		document.getElementById("firstName-error").innerHTML = "First name missing";
 	} 
 	// lastName Validation
 	if(document.getElementById("lastName").value.trim() == "") 
 	{
 		count=1;
-		alert("Last Name Is Empty");
+		document.getElementById("lastName-error").innerHTML = "Last name missing";
 	}
-	// Password Verfication
+	// Password Verification
 	if(document.getElementById("password").value.length < 8 )
 	{
 		count=1;
-		alert("Password Length should be greater than 8");
+		document.getElementById("password-error").innerHTML = "Set password";
 	}
 	// Matching The Password and Confirm Password
 	if(document.getElementById("password").value != document.getElementById("confirmPassword").value) 
 	{
 		count=1;
-		alert("Password & Confirm Password mismatch!!");
+		document.getElementById("confirm-error").innerHTML = "Password mismatch";
 	}
 	// Selecting the States
-	if(document.getElementById("state") == "Select State" || document.getElementById("city").value == "Select City" ) 
+	if(document.getElementById("state").value == "Select State" || document.getElementById("city").value == "Select City" ) 
 	{
 		count=1;
-		alert("State or City are not Selected!!");
+		document.getElementById("state-error").innerHTML = "Select state and city";
 	}
 	// Checking the Conditions if user created or not
 	if(count==0)
 	{
-		alert("USER CREATED SUCCESSFUL");
+		document.getElementById("myForm").submit();
+		alert("USER CREATED SUCCESSFULLY");
 	}
 }
 
