@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="..\Css\Search.css" type="text/css">
+<script type="text/javascript" src="..\Js\Search.js"></script>
+<title>CarDekho</title>
+</head>
+<body>
+	<header>
+		<img alt="No Logo Found" src="../Resources/Logo.jpg" class="logo">
+		<div class="part">
+			<a href="Home.html">Home</a>
+		</div>
+	</header>
+	<section>
+			<div id="searchdiv" class="search">
+				<table class="create-table">
+					<tr>
+						<td colspan="2">Search Car</td>
+					</tr>
+					<tr>
+						<td>Make</td>
+						<td>
+							<select text="text" id="make" name="make" onchange="createModel()">
+								<option value="select make">Select Make</option>
+								<option value="ford">Ford</option>
+								<option value="honda">Honda</option>
+								<option value="maruti suzuki">Maruti Suzuki</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="make-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td>Model</td>
+						<td>
+							<select text="text" id="model" name="model">
+								<option value="select model">Select Model</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="model-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="button" id="searchButton" value="Search Car" onclick="validate()"></td>
+					</tr>
+				</table>
+				<div class="result" id="result">
+					<div class="car">
+						<img src="../Resources/figo.jpg" class="image">
+						<a href="Details.html" class="details"><img alt="no image" src="../Resources/view.png"></a>
+						<a href="Edit.html" class="edit"><img alt="no image" src="../Resources/edit.png" class="pic"></img></a>
+					</div>
+					<div class="car">
+						<img src="../Resources/Celerio.jpg" class="image">
+						<a href="Details.html" class="details"><img alt="no image" src="../Resources/view.png"></a>
+						<a href="Edit.html" class="edit"><img alt="no image" src="../Resources/edit.png" class="pic"></img></a>
+					</div>
+				</div>
+			</div>
+			   
+	</section>
+	<footer> </footer>
+</body>
+</html>
