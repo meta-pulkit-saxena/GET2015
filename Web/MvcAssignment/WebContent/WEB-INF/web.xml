@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.4">
+  <display-name>validation</display-name>
+  <servlet>
+    <display-name>Mvc</display-name>
+    <servlet-name>LandingPageController</servlet-name>
+    <servlet-class>controller.LandingPageController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LandingPageController</servlet-name>
+    <url-pattern>/LandingPageController</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>LandingPageController</welcome-file>
+  </welcome-file-list>
+</web-app>
