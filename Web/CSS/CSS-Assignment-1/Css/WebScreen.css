@@ -1,0 +1,314 @@
+@CHARSET "ISO-8859-1";
+
+/*  */
+
+body {
+	background-color: #D3D0BC;
+}
+
+/* For header */
+
+header {
+	background-color: #99CCFF;
+	border-top-right-radius: 25px;
+	border-top-left-radius: 25px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+/* For heading text */
+
+#heading {
+	font-size: x-large;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* For slogan text */
+
+#slogan {
+	font-size: medium;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* For menu bar */
+
+.menu 
+ {
+	background:#9BB2B8;
+	padding:3px;
+	height:20px;
+}
+
+/* For menu text formatting */
+
+.menu-text a
+ {
+	text-align:left;
+	color:#000000;
+	font-size:medium;
+	text-decoration:none;
+	margin-left: 8px;
+}
+
+/* For hover property on menu buttons */
+
+.menu-text a:hover
+{
+	text-decoration:none;
+	background:#0EBFE9;
+	border:1px solid #0099CC;
+}
+
+/* container div */
+
+.container {
+	background-color: #FFF; 
+	padding-left:30px;
+	height: 650px;
+}
+
+/* left nav */
+
+.left-nav 
+{
+	padding-left:10px;
+	padding-top:10px;
+	height:170px;
+	width:320px;
+	background:#CAE4FF;
+}
+
+/* paragraph */
+
+.left-nav p 
+{
+	text-align:left;
+	color:#000000;
+	font-size: 16px;
+	font-weight:bold;
+	padding:10px;
+	width:280px;
+	background-color:#99CCFF;
+	border:1px solid #0099CC;
+}
+
+/* left Nav Anchor css */
+
+.left-nav a {
+	text-align:left;
+	color:#000000;
+	font-size:14px;
+	padding:10px;
+	width:320px;
+	text-decoration:none;
+}
+
+/* hover */
+
+.left-nav a:hover{
+	text-align:left;
+	color:#000000;
+	font-size:14px;
+	text-decoration:none;
+	background:#BFEFFF;
+	border:1px solid #0099CC;
+	width:320px;
+	padding:10px;
+}
+
+/* left bottom */
+
+.left-bottom 
+{
+	padding-left:10px;
+	padding-top:10px;
+	height:170px;
+	width:320px;
+	background:#CAE4FF;
+}
+
+/* paragraph */
+
+.left-bottom  p
+{
+	text-align:left;
+	color:#000000;
+	font-size: 16px;
+	font-weight:bold;
+	padding:10px;
+	width:280px;
+	background-color:#99CCFF;
+	border:1px solid #0099CC;
+}
+
+/* box css */
+
+.box
+ {
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+	text-align:left;
+	font-size:14px;
+	padding-left:10px;
+}
+
+/* Section image css */
+
+.section {
+	font-size:14px;
+	width:500px;
+	height:550px;
+	margin-top:-350px;
+	margin-left:410px;
+	padding:10px;
+}
+
+/* right search css */
+
+.right-search
+{
+	margin-top:-590px;
+	margin-left:1000px;
+	padding:10px;
+	height:140px;
+	width:320px;
+	background:#CAE4FF;
+}
+
+/* pargraph css of right search */
+
+.right-search p
+{
+	text-align:left;
+	color:#000000;
+	font-size: 16px;
+	font-weight:bold;
+	padding:10px;
+	width:280px;
+	background-color:#99CCFF;
+	border:1px solid #0099CC;
+}
+
+/* right search input css */
+
+.right-search input 
+{
+	color:#7AC5CD;
+	width:250px;
+}
+
+/* right botom css */
+
+.right-bottom1
+{
+	margin-top:10px;
+	margin-left:1000px;
+	padding:10px;
+	height:200px;
+	width:320px;
+	background:#CAE4FF;
+}  
+
+/* right bottom p */
+
+.right-bottom1  p
+{
+	text-align:left;
+	color:#000000;
+	font-size: 16px;
+	font-weight:bold;
+	padding:10px;
+	width:280px;
+	background-color:#99CCFF;
+	border:1px solid #0099CC;
+}
+
+/* anchor */
+
+.right-bottom1 a 
+{
+	text-align:left;
+	color:#99CCFF;
+	font-size:14px;
+	padding:10px;
+	width:320px;
+}
+
+/* hover */
+
+.right-bottom1 a:hover{
+	text-align:left;
+	color:#7AC5CD;
+	font-size:14px;
+	text-decoration:none;
+	width:320px;
+	padding:10px;
+}
+
+/* right bottom */
+
+.right-bottom2
+{
+	margin-top:8px;
+	margin-left:1000px;
+	padding:10px;
+	height:160px;
+	width:320px;
+	background:#CAE4FF;
+}  
+
+/* paragraph */
+
+.right-bottom2  p
+{
+	text-align:left;
+	color:#000000;
+	font-size: 16px;
+	font-weight:bold;
+	padding:10px;
+	width:280px;
+	background-color:#99CCFF;
+	border:1px solid #0099CC;
+}
+
+/* anchor */
+
+.right-bottom2 a 
+{
+	text-align:left;
+	color:#99CCFF;
+	font-size:14px;
+	padding:10px;
+	width:320px;
+}
+
+/* anchor hover */
+
+.right-bottom2 a:hover
+{
+	text-align:left;
+	color:#7AC5CD;
+	font-size:14px;
+	text-decoration:none;
+	width:320px;
+	padding:10px;
+}
+
+/* Footer */
+
+footer 
+{
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	padding-top:10px;
+	padding-bottom:20px;
+	padding-left:20px;
+	padding-right:20px;
+	background:#DAB58F;
+	font-size: large;
+	text-align:center;
+	height:40px;
+}
