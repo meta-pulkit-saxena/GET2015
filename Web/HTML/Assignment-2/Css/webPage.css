@@ -1,0 +1,47 @@
+
+article {
+    padding:5px;
+    margin-top:5px;
+	border:solid 1px #D7D7FF;
+}
+
+header {
+    padding:0px;
+    text-align:center;
+}
+
+aside {
+    margin-top:5px;
+    background-color:#E6E6FF;
+    padding:5px;
+    text-align:center;
+    border:solid 1px #E6E6FF;
+}
+
+section {
+    padding:5px;
+    border:solid 1px #D7D7FF;
+    margin-top:5px;
+}
+
+footer {
+    padding:5px;
+    text-align:center;
+    font-weight:bold;
+}
+
+nav {
+    text-align:center;
+}
+
+nav a {
+	text-decoration:none;
+}
+
+ul li {
+    display:inline;
+    padding-left:5px;
+    padding-right:5px;
+    text-align:left;
+    font-weight:bold;
+}
