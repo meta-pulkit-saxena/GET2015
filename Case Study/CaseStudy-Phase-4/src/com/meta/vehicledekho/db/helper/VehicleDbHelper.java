@@ -144,9 +144,9 @@ public class VehicleDbHelper {
 			car.setFuelCapacity(fuelCapacity);
 			int milage = Integer.parseInt(set.getString("fuel_Capacity"));
 			car.setMileage(milage);
-			int showRoom = Integer.parseInt(set.getString("price"));
+			float showRoom = Float.parseFloat((set.getString("price")));
 			car.setPrice(showRoom);
-			int roadTax = Integer.parseInt(set.getString("road_Tax"));
+			float roadTax =Float.parseFloat((set.getString("road_Tax")));
 			car.setRoadTax(roadTax);
 			car.setVehicleId(vehicle.getVehicleId());
 			CarDbHelper carDb = new CarDbHelper();
