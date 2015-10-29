@@ -73,6 +73,7 @@ public class CarDbHelper {
 			PreparedStatement statement = connection.prepareStatement(query); // Creating a prepared statement.
 			statement.setInt(1, vehicle.getVehicleId());
 			ResultSet set = statement.executeQuery();
+			set.next();
 			boolean type = Boolean.getBoolean(set.getString("ac"));
 			car.setAc(type);
 			type = Boolean.getBoolean(set.getString("power_steering"));
