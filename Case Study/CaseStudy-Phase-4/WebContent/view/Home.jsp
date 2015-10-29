@@ -18,13 +18,13 @@
 	}
 	 %>
 	 <script>
-       onload(username);
+       onload(<%=username%>);
     </script>
 	<header> 
 		<img alt="No Logo Found" src="Resources/Logo.jpg" class="logo">
 		<div class="part">
 			<a href="#">Home</a><a href="<%=url%>">Create</a><a href="/CaseStudy-Phase-4/SearchServlet">Search</a> 
-			<label id="login-button" onclick="displayLogin()">Log In</label>
+			<label id="login-button" onclick="displayLogin(<%=username%>)">Log In</label>
 		</div>
 	</header>
 	<section>
