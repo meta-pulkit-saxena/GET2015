@@ -4,14 +4,14 @@
 
 function onload(username) {
 	document.getElementById("myform").style.visibility = "hidden";
-	if(username != null) {
+	if(username !== null || username != " ") {
 		document.getElementById("login-button").innerHTML = "Hi ";
 	}
 	
 }
 
-function displayLogin() {
-	if(sessionStorage.length == 0) {
+function displayLogin(username) {
+	if(username !== null || username != " ") {
 		document.getElementById("myform").style.visibility = "visible";
 	}
 }
