@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="..\Css\Home.css" type="text/css">
+<script type="text/javascript" src="..\Js\Home.js"></script>
+<title>CarDekho</title>
+</head>
+<body>
+	<header>
+		<img alt="No Logo Found" src="../Resources/Logo.jpg" class="logo">
+		<div class="part">
+			<a href="Home.html">Home</a> <label id="create-button" onclick="create()">Create</label> <a href="Search.html">Search</a> <label id="login-button" onclick="displayLogin()">Log In</label>
+		</div>
+	</header>
+	<section>
+			
+		<form id="myform" class="log-in" onsubmit="return validate()" action="Home.html">
+			<br>Log In
+			<table class="log" align="center">
+				<tr>
+				</tr>
+					<td colspan="2"><hr></td>
+				</tr>
+				<tr>
+					<td>UserName</td>
+					<td>
+						<input type="text" id="username">
+					</td>
+				</tr>
+					<td></td>
+					<td> <label id="username-error" class="login-error"></label></td>
+				<tr>
+				<tr>
+					<td>Password</td>
+					<td>
+						<input type="password" id="password">
+					</td>
+				</tr>
+				</tr>
+					<td></td>
+					<td><label id="password-error" class="login-error"></label></td>
+				<tr>
+				<tr>
+					<td colspan="2"><hr></td>
+				</tr>
+				<tr>
+				<td colspan="2">
+					<input type="submit" id="submit" value="Log In">
+				</td>
+				</tr>
+			</table>
+		</form>
+	</section>
+	<footer> </footer>
+</body>
+</html>

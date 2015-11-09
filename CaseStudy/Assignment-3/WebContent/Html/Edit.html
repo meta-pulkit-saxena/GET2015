@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="..\Css\Create.css" type="text/css">
+<title>CarDekho</title>
+</head>
+<body>
+	<header>
+		<img alt="No Logo Found" src="../Resources/Logo.jpg" class="logo">
+		<div class="part">
+			<a href="Home.html">Home</a> <a href="Search.html">Search</a>
+		</div>
+	</header>
+	<section>
+			<form id="createform" class="create" onsubmit="return validate()" action="Home.html">
+				<table class="create-table">
+					<tr>
+						<td colspan="2">Edit Car</td>
+					</tr>
+					<tr>
+						<td>Make</td>
+						<td><input text="text" id="make" value="Ford" name="make"></td>
+						
+					</tr>
+					<tr>
+						<td>Model</td>
+						<td><input text="text" id="model" value="Figo" name="model"></td>
+						
+					</tr>
+					<tr>
+						<td>Engine(CC)</td>
+						<td><input text="text" id="engine" value="1196" name="engine"></td>
+						
+					</tr>
+					<tr>
+						<td>Fuel Capacity</td>
+						<td><input text="text" id="fuel" value="45" name="fuel"></td>
+						
+					</tr>
+					<tr>
+						<td>Milage</td>
+						<td><input text="text" id="milage" value="16" name="milage"></td>
+						
+					</tr>
+					<tr>
+						<td>Ex-Showroom Price</td>
+						<td><input text="text" id="price" value="4.3 lac" name="price"></td>
+						
+					</tr>
+					<tr>
+						<td>RoadTax</td>
+						<td><input text="text" id="roadtax" value="10%" name="road-tax"></td>
+						
+					</tr>
+					<tr>
+						<td>On-Road price</td>
+						<td><input text="text" id="onroad" value="4.73 lac" name="onr-road"></td>
+						
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" id="submitform" value="Update"></td>
+					</tr>
+				</table>
+			</form>
+	</section>
+	<footer> </footer>
+</body>
+</html>

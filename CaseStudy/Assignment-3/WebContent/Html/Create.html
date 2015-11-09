@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="..\Css\Create.css" type="text/css">
+<script type="text/javascript" src="..\Js\Create.js"></script>
+<title>CarDekho</title>
+</head>
+<body>
+	<header>
+		<img alt="No Logo Found" src="../Resources/Logo.jpg" class="logo">
+		<div class="part">
+			<a href="Home.html">Home</a> <a href="Search.html">Search</a>
+		</div>
+	</header>
+	<section>
+			<form id="createform" class="create" onsubmit="return validate()" action="Home.html">
+				<table class="create-table">
+					<tr>
+						<td colspan="2">Create Car</td>
+					</tr>
+					<tr>
+						<td>Make</td>
+						<td><input text="text" id="make"></td>
+						
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="make-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td>Model</td>
+						<td><input text="text" id="model"></td>
+						
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="model-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td>Engine(CC)</td>
+						<td><input text="text" id="engine"></td>
+						
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="engine-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td>Fuel Capacity</td>
+						<td><input text="text" id="fuel"></td>
+						
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="fuel-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td>Milage</td>
+						<td><input text="text" id="milage"></td>
+						
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="milage-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td>Ex-Showroom Price</td>
+						<td><input text="text" id="price"></td>
+						
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="price-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td>RoadTax</td>
+						<td><input text="text" id="roadtax"></td>
+						
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="roadtax-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td>On-Road price</td>
+						<td><input text="text" id="onroad"></td>
+						
+					</tr>
+					<tr>
+						<td></td>
+						<td><label id="onroad-error" class="error"></label></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" id="submitform" value="Create Car"></td>
+					</tr>
+				</table>
+			</form>
+	</section>
+	<footer> </footer>
+</body>
+</html>
