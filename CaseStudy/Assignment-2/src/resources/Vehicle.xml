@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+
+<vehicles>
+	<Car>
+		<id>1</id>
+  		<make>Ford</make> 
+  		<model>Figo</model> 
+  		<engineInCC>1200</engineInCC> 
+  		<fuelCapacity>30</fuelCapacity> 
+  		<mileage>21</mileage> 
+  		<price>550000</price> 
+  		<roadTax>25000</roadTax> 
+  		<AC>true</AC> 
+  		<powerSteering>true</powerSteering> 
+  		<accessoryKit>true</accessoryKit> 
+  	</Car>
+  	<Bike>
+		<id>2</id>
+  		<make>Bajaj</make>
+  		<model>Pulsar</model> 
+  		<engineInCC>220</engineInCC> 
+  		<fuelCapacity>15</fuelCapacity> 
+  		<mileage>45</mileage> 
+  		<price>45000</price> 
+  		<roadTax>5000</roadTax> 
+  		<selfStart>true</selfStart> 
+  		<helmetPrice>1000</helmetPrice> 
+ 	</Bike>
+</vehicles>
