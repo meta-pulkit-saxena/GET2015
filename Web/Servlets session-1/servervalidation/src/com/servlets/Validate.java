@@ -64,8 +64,6 @@ public class Validate extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		@SuppressWarnings("unused")
-		PrintWriter out = response.getWriter();
 		String userName = request.getParameter("name");
 		String psw = request.getParameter("password");
 		int result = validation(userName, psw);
