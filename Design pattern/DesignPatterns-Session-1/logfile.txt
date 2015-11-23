@@ -1,0 +1,1 @@
+[main] ERROR com.logging.logger.LoggerApi 21/10/2015 15:23:03 – Array Index Out Of Bounds Exception caught
